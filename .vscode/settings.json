@@ -1,1 +1,6 @@
-{ "python.analysis.extraPaths": ["./"] }
+{
+    "python.defaultInterpreterPath": "/anaconda3/envs/options-saas/bin/python",
+    "python.analysis.extraPaths": [
+        "./backend"
+    ]
+}
