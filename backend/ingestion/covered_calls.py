@@ -5,7 +5,7 @@ from ingestion.base import ingest_json
 from ingestion.utils import SHARED_DATA_DIR
 
 def run():
-    json_path = SHARED_DATA_DIR / "covered_calls.json"
+    json_path = SHARED_DATA_DIR / "ccs.json"
 
     if not json_path.exists():
         raise FileNotFoundError(f"File not found: {json_path}")
