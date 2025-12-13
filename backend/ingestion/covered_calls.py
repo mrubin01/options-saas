@@ -16,6 +16,7 @@ def run():
             session=db,
             model=CoveredCall,
             json_path=json_path,
+            defaults={"exchange": 0},
         )
         print(f"Ingested covered calls from {json_path}")
     finally:

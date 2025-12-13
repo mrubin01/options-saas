@@ -11,7 +11,10 @@ def ingest_json(
     model,
     json_path: Path,
     date_fields: set[str] = {"expiry_date"},
+    defaults: dict | None = None,
 ):
+    defaults = defaults or {}
+
     with json_path.open("r") as f:
         records = json.load(f)
 
@@ -21,6 +24,9 @@ def ingest_json(
         for field in date_fields:
             if field in r and isinstance(r[field], str):
                 r[field] = parse_date(r[field])
+
+        for key, value in defaults.items():
+            r.setdefault(key, value)
 
         objects.append(model(**r))
 
