@@ -1,6 +1,10 @@
 from app.db.database import Base, engine
-from app import models  # ensure all models are imported
+from app.models.covered_call import CoveredCall 
+# from app import models  # ensure all models are imported
+
+def init_db():
+    Base.metadata.create_all(bind=engine)
 
 if __name__ == "__main__":
-    Base.metadata.create_all(bind=engine)
+    init_db()
     print("Tables created successfully.")
