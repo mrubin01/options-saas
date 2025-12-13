@@ -1,6 +1,7 @@
 import json
 from datetime import date
 from sqlalchemy.orm import Session
+from pathlib import Path
 
 def parse_date(value: str) -> date:
     return date.fromisoformat(value)
@@ -8,10 +9,10 @@ def parse_date(value: str) -> date:
 def ingest_json(
     session: Session,
     model,
-    json_path: str,
+    json_path: Path,
     date_fields: set[str] = {"expiry_date"},
 ):
-    with open(json_path, "r") as f:
+    with json_path.open("r") as f:
         records = json.load(f)
 
     objects = []
