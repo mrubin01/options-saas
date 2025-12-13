@@ -7,6 +7,9 @@ from ingestion.utils import SHARED_DATA_DIR
 def run():
     json_path = SHARED_DATA_DIR / "covered_calls.json"
 
+    if not json_path.exists():
+        raise FileNotFoundError(f"File not found: {json_path}")
+
     db: Session = SessionLocal()
     try:
         ingest_json(
@@ -14,6 +17,7 @@ def run():
             model=CoveredCall,
             json_path=json_path,
         )
+        print(f"Ingested covered calls from {json_path}")
     finally:
         db.close()
 
