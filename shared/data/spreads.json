@@ -3,7 +3,7 @@
     "contract": "SSO251219C00066000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 66
   },
@@ -11,7 +11,7 @@
     "contract": "XLE251219C00055000",
     "ticker": "XLE",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 45.74,
     "strike_price": 55
   },
@@ -19,7 +19,7 @@
     "contract": "SSO251219C00070000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 70
   },
@@ -27,7 +27,7 @@
     "contract": "XLY251219C00140000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 140
   },
@@ -35,7 +35,7 @@
     "contract": "SSO251219C00073000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 73
   },
@@ -43,7 +43,7 @@
     "contract": "XLY251219C00145000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 145
   },
@@ -51,7 +51,7 @@
     "contract": "XLE251219C00065000",
     "ticker": "XLE",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 45.74,
     "strike_price": 65
   },
@@ -59,7 +59,7 @@
     "contract": "XLU251219C00062000",
     "ticker": "XLU",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 42.8867,
     "strike_price": 62
   },
@@ -67,7 +67,7 @@
     "contract": "SSO251219C00082000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 82
   },
@@ -75,7 +75,7 @@
     "contract": "XLU251219C00063000",
     "ticker": "XLU",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 42.8867,
     "strike_price": 63
   },
@@ -83,7 +83,7 @@
     "contract": "SSO251219C00083000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 83
   },
@@ -91,7 +91,7 @@
     "contract": "SSO251219C00069000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 69
   },
@@ -99,7 +99,7 @@
     "contract": "XLU251219C00065000",
     "ticker": "XLU",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 42.8867,
     "strike_price": 65
   },
@@ -107,7 +107,7 @@
     "contract": "XLE251219C00068000",
     "ticker": "XLE",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 45.74,
     "strike_price": 68
   },
@@ -115,7 +115,7 @@
     "contract": "XLY251219C00185000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 185
   },
@@ -123,7 +123,7 @@
     "contract": "XLE251219C00069000",
     "ticker": "XLE",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 45.74,
     "strike_price": 69
   },
@@ -131,7 +131,7 @@
     "contract": "SSO251219C00086000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 86
   },
@@ -139,7 +139,7 @@
     "contract": "SSO251219C00087000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 87
   },
@@ -147,7 +147,7 @@
     "contract": "XLY251219C00197000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 197
   },
@@ -155,7 +155,7 @@
     "contract": "XLU251219C00072000",
     "ticker": "XLU",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 42.8867,
     "strike_price": 72
   },
@@ -163,7 +163,7 @@
     "contract": "XLE251219C00067000",
     "ticker": "XLE",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 45.74,
     "strike_price": 67
   },
@@ -171,7 +171,7 @@
     "contract": "SSO251219C00079000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 79
   },
@@ -179,7 +179,7 @@
     "contract": "SSO251219C00085000",
     "ticker": "SSO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 58.29,
     "strike_price": 85
   },
@@ -187,7 +187,7 @@
     "contract": "XLE251219C00074000",
     "ticker": "XLE",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 45.74,
     "strike_price": 74
   },
@@ -195,7 +195,7 @@
     "contract": "XLB251219C00077000",
     "ticker": "XLB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.57,
     "strike_price": 77
   },
@@ -203,7 +203,7 @@
     "contract": "XLB251219C00072000",
     "ticker": "XLB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.57,
     "strike_price": 72
   },
@@ -211,7 +211,7 @@
     "contract": "XLY251219C00192000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 192
   },
@@ -219,7 +219,7 @@
     "contract": "XLU251219C00076000",
     "ticker": "XLU",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 42.8867,
     "strike_price": 76
   },
@@ -227,7 +227,7 @@
     "contract": "XLY251219C00194000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 194
   },
@@ -235,7 +235,7 @@
     "contract": "XLB251219C00078000",
     "ticker": "XLB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.57,
     "strike_price": 78
   },
@@ -243,7 +243,7 @@
     "contract": "XLB251219C00079000",
     "ticker": "XLB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.57,
     "strike_price": 79
   },
@@ -251,7 +251,7 @@
     "contract": "XLB251219C00083000",
     "ticker": "XLB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.57,
     "strike_price": 83
   },
@@ -259,7 +259,7 @@
     "contract": "SOXL251219C00050000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 47.6323,
     "strike_price": 50
   },
@@ -267,7 +267,7 @@
     "contract": "BOIL251219C00035000",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 35
   },
@@ -275,7 +275,7 @@
     "contract": "DPST251219C00105000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 101.39,
     "strike_price": 105
   },
@@ -283,7 +283,7 @@
     "contract": "SOXL251219C00051000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 47.6323,
     "strike_price": 51
   },
@@ -291,7 +291,7 @@
     "contract": "BOIL251219C00035500",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 35.5
   },
@@ -299,7 +299,7 @@
     "contract": "BOIL251219C00036000",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 36
   },
@@ -307,7 +307,7 @@
     "contract": "SOXL251219C00052000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 47.6323,
     "strike_price": 52
   },
@@ -315,7 +315,7 @@
     "contract": "BOIL251219C00036500",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 36.5
   },
@@ -323,7 +323,7 @@
     "contract": "TNA251219C00051000",
     "ticker": "TNA",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 48.745,
     "strike_price": 51
   },
@@ -331,7 +331,7 @@
     "contract": "YINN251219C00045000",
     "ticker": "YINN",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.325,
     "strike_price": 45
   },
@@ -339,7 +339,7 @@
     "contract": "BOIL251219C00037000",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 37
   },
@@ -347,7 +347,7 @@
     "contract": "SOXL251219C00053000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 47.6323,
     "strike_price": 53
   },
@@ -355,7 +355,7 @@
     "contract": "DPST251212C00103000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 101.39,
     "strike_price": 103
   },
@@ -363,7 +363,7 @@
     "contract": "SOXL251212C00049500",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 47.6323,
     "strike_price": 49.5
   },
@@ -371,7 +371,7 @@
     "contract": "YINN251219C00045500",
     "ticker": "YINN",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.325,
     "strike_price": 45.5
   },
@@ -379,7 +379,7 @@
     "contract": "BOIL251219C00057000",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 57
   },
@@ -387,7 +387,7 @@
     "contract": "GDXJ251219C00111000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 108.51,
     "strike_price": 111
   },
@@ -395,7 +395,7 @@
     "contract": "DPST251219C00110000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 101.39,
     "strike_price": 110
   },
@@ -403,7 +403,7 @@
     "contract": "SLV251219C00056500",
     "ticker": "SLV",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 54.965,
     "strike_price": 56.5
   },
@@ -411,7 +411,7 @@
     "contract": "SOXL251219C00054000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 47.6323,
     "strike_price": 54
   },
@@ -419,7 +419,7 @@
     "contract": "URA251219C00050000",
     "ticker": "URA",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 48.0049,
     "strike_price": 50
   },
@@ -427,7 +427,7 @@
     "contract": "DPST251212C00104000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 101.39,
     "strike_price": 104
   },
@@ -435,7 +435,7 @@
     "contract": "BOIL251212C00035000",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 33.1699,
     "strike_price": 35
   },
@@ -443,7 +443,7 @@
     "contract": "TNA251219C00052000",
     "ticker": "TNA",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 48.745,
     "strike_price": 52
   },
@@ -451,7 +451,7 @@
     "contract": "BOIL251219C00037500",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 37.5
   },
@@ -459,7 +459,7 @@
     "contract": "SOXL251212C00050000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 47.6323,
     "strike_price": 50
   },
@@ -467,7 +467,7 @@
     "contract": "GDXJ251219C00112000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 108.51,
     "strike_price": 112
   },
@@ -475,7 +475,7 @@
     "contract": "SPXU251219C00052000",
     "ticker": "SPXU",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 50.445,
     "strike_price": 52
   },
@@ -483,7 +483,7 @@
     "contract": "YINN251219C00046000",
     "ticker": "YINN",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.325,
     "strike_price": 46
   },
@@ -491,7 +491,7 @@
     "contract": "KRE251219C00083000",
     "ticker": "KRE",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 64.955,
     "strike_price": 83
   },
@@ -499,7 +499,7 @@
     "contract": "ARKK251219C00085000",
     "ticker": "ARKK",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 82.855,
     "strike_price": 85
   },
@@ -507,7 +507,7 @@
     "contract": "SLV251219C00057000",
     "ticker": "SLV",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 54.965,
     "strike_price": 57
   },
@@ -515,7 +515,7 @@
     "contract": "UPRO251219C00120000",
     "ticker": "UPRO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 117.06,
     "strike_price": 120
   },
@@ -523,7 +523,7 @@
     "contract": "DPST251212C00105000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 101.39,
     "strike_price": 105
   },
@@ -531,7 +531,7 @@
     "contract": "BOIL251219C00038000",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 38
   },
@@ -539,7 +539,7 @@
     "contract": "SOXL251219C00055000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 47.6323,
     "strike_price": 55
   },
@@ -547,7 +547,7 @@
     "contract": "YINN251219C00046500",
     "ticker": "YINN",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 43.325,
     "strike_price": 46.5
   },
@@ -555,7 +555,7 @@
     "contract": "GDX251219C00084000",
     "ticker": "GDX",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 81.6925,
     "strike_price": 84
   },
@@ -563,7 +563,7 @@
     "contract": "SOXL251212C00050500",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 47.6323,
     "strike_price": 50.5
   },
@@ -571,7 +571,7 @@
     "contract": "TNA251212C00050500",
     "ticker": "TNA",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 48.745,
     "strike_price": 50.5
   },
@@ -579,7 +579,7 @@
     "contract": "XHB251219C00106500",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 104.98,
     "strike_price": 106.5
   },
@@ -587,7 +587,7 @@
     "contract": "GDXJ251219C00113000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 108.51,
     "strike_price": 113
   },
@@ -595,7 +595,7 @@
     "contract": "BOIL251219C00064000",
     "ticker": "BOIL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 33.1699,
     "strike_price": 64
   },
@@ -603,7 +603,7 @@
     "contract": "SLV251219C00057500",
     "ticker": "SLV",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 54.965,
     "strike_price": 57.5
   },
@@ -611,7 +611,7 @@
     "contract": "XOP251219C00136000",
     "ticker": "XOP",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 134.44,
     "strike_price": 136
   },
@@ -619,7 +619,7 @@
     "contract": "URA251219C00051000",
     "ticker": "URA",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 48.0049,
     "strike_price": 51
   },
@@ -627,7 +627,7 @@
     "contract": "XBI251219C00124000",
     "ticker": "XBI",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 122.1,
     "strike_price": 124
   },
@@ -635,7 +635,7 @@
     "contract": "XHB251219C00107000",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 104.98,
     "strike_price": 107
   },
@@ -643,7 +643,7 @@
     "contract": "ARKK251219C00086000",
     "ticker": "ARKK",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 82.855,
     "strike_price": 86
   },
@@ -651,7 +651,7 @@
     "contract": "TAN251219C00050000",
     "ticker": "TAN",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 47.83,
     "strike_price": 50
   },
@@ -659,7 +659,7 @@
     "contract": "DPST251212C00106000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 101.39,
     "strike_price": 106
   },
@@ -667,7 +667,7 @@
     "contract": "GBTC251219C00077000",
     "ticker": "GBTC",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 73.6,
     "strike_price": 77
   },
@@ -675,7 +675,7 @@
     "contract": "GDX251219C00085000",
     "ticker": "GDX",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 81.6925,
     "strike_price": 85
   },
@@ -683,7 +683,7 @@
     "contract": "SOXL251219C00056000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 47.6323,
     "strike_price": 56
   },
@@ -691,7 +691,7 @@
     "contract": "SOXL251212C00051000",
     "ticker": "SOXL",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 47.6323,
     "strike_price": 51
   },
@@ -699,7 +699,7 @@
     "contract": "SPXU251219C00053000",
     "ticker": "SPXU",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 50.445,
     "strike_price": 53
   },
@@ -707,7 +707,7 @@
     "contract": "SLV251219C00058000",
     "ticker": "SLV",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 54.965,
     "strike_price": 58
   },
@@ -715,7 +715,7 @@
     "contract": "GDXJ251219C00114000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 108.51,
     "strike_price": 114
   },
@@ -723,7 +723,7 @@
     "contract": "TNA251212C00051000",
     "ticker": "TNA",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 48.745,
     "strike_price": 51
   },
@@ -731,7 +731,7 @@
     "contract": "XHB251219C00107500",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 104.98,
     "strike_price": 107.5
   },
@@ -739,7 +739,7 @@
     "contract": "DPST251219C00115000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 101.39,
     "strike_price": 115
   },
@@ -747,7 +747,7 @@
     "contract": "XOP251219C00137000",
     "ticker": "XOP",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 134.44,
     "strike_price": 137
   },
@@ -755,7 +755,7 @@
     "contract": "SLV251219C00058500",
     "ticker": "SLV",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 54.965,
     "strike_price": 58.5
   },
@@ -763,7 +763,7 @@
     "contract": "URA251219C00052000",
     "ticker": "URA",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 48.0049,
     "strike_price": 52
   },
@@ -771,7 +771,7 @@
     "contract": "DPST251212C00107000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 101.39,
     "strike_price": 107
   },
@@ -779,7 +779,7 @@
     "contract": "UPRO251212C00119000",
     "ticker": "UPRO",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 117.06,
     "strike_price": 119
   },
@@ -787,7 +787,7 @@
     "contract": "XHB251219C00108000",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 104.98,
     "strike_price": 108
   },
@@ -795,7 +795,7 @@
     "contract": "GDXJ251219C00115000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 108.51,
     "strike_price": 115
   },
@@ -803,7 +803,7 @@
     "contract": "XBI251219C00125000",
     "ticker": "XBI",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 122.1,
     "strike_price": 125
   },
@@ -811,7 +811,7 @@
     "contract": "GDXJ251212C00111000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 108.51,
     "strike_price": 111
   },
@@ -819,7 +819,7 @@
     "contract": "ARKK251219C00087000",
     "ticker": "ARKK",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 82.855,
     "strike_price": 87
   },
@@ -827,7 +827,7 @@
     "contract": "GDX251219C00086000",
     "ticker": "GDX",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 81.6925,
     "strike_price": 86
   },
@@ -835,7 +835,7 @@
     "contract": "XLK251219C00150000",
     "ticker": "XLK",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 147.91,
     "strike_price": 150
   },
@@ -843,7 +843,7 @@
     "contract": "GBTC251219C00078000",
     "ticker": "GBTC",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 73.6,
     "strike_price": 78
   },
@@ -851,7 +851,7 @@
     "contract": "KRE251219C00066500",
     "ticker": "KRE",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 64.955,
     "strike_price": 66.5
   },
@@ -859,7 +859,7 @@
     "contract": "XBI251219C00126000",
     "ticker": "XBI",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 122.1,
     "strike_price": 126
   },
@@ -867,7 +867,7 @@
     "contract": "GBTC251219C00076000",
     "ticker": "GBTC",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 73.6,
     "strike_price": 76
   },
@@ -875,7 +875,7 @@
     "contract": "USO251219C00071500",
     "ticker": "USO",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 69.78,
     "strike_price": 71.5
   },
@@ -883,7 +883,7 @@
     "contract": "XHB251219C00108500",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 104.98,
     "strike_price": 108.5
   },
@@ -891,7 +891,7 @@
     "contract": "XOP251219C00138000",
     "ticker": "XOP",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 134.44,
     "strike_price": 138
   },
@@ -899,7 +899,7 @@
     "contract": "GDXJ251219C00116000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 108.51,
     "strike_price": 116
   },
@@ -907,7 +907,7 @@
     "contract": "XHB251212C00106500",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 104.98,
     "strike_price": 106.5
   },
@@ -915,7 +915,7 @@
     "contract": "UPRO251212C00119500",
     "ticker": "UPRO",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 117.06,
     "strike_price": 119.5
   },
@@ -923,7 +923,7 @@
     "contract": "ARKK251212C00084500",
     "ticker": "ARKK",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 82.855,
     "strike_price": 84.5
   },
@@ -931,7 +931,7 @@
     "contract": "DPST251212C00108000",
     "ticker": "DPST",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 101.39,
     "strike_price": 108
   },
@@ -939,7 +939,7 @@
     "contract": "XHB251219C00109000",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 104.98,
     "strike_price": 109
   },
@@ -947,7 +947,7 @@
     "contract": "ARKK251219C00088000",
     "ticker": "ARKK",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 82.855,
     "strike_price": 88
   },
@@ -955,7 +955,7 @@
     "contract": "GDXJ251212C00112000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 108.51,
     "strike_price": 112
   },
@@ -963,7 +963,7 @@
     "contract": "UPRO251212C00120000",
     "ticker": "UPRO",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 117.06,
     "strike_price": 120
   },
@@ -971,7 +971,7 @@
     "contract": "GDX251212C00084000",
     "ticker": "GDX",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 81.6925,
     "strike_price": 84
   },
@@ -979,7 +979,7 @@
     "contract": "GDX251219C00087000",
     "ticker": "GDX",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 81.6925,
     "strike_price": 87
   },
@@ -987,7 +987,7 @@
     "contract": "XLY251219C00120000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 120
   },
@@ -995,7 +995,7 @@
     "contract": "XOP251212C00136000",
     "ticker": "XOP",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 134.44,
     "strike_price": 136
   },
@@ -1003,7 +1003,7 @@
     "contract": "XHB251212C00107000",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 104.98,
     "strike_price": 107
   },
@@ -1011,7 +1011,7 @@
     "contract": "XBI251212C00124000",
     "ticker": "XBI",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 122.1,
     "strike_price": 124
   },
@@ -1019,7 +1019,7 @@
     "contract": "XOP251219C00139000",
     "ticker": "XOP",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 134.44,
     "strike_price": 139
   },
@@ -1027,7 +1027,7 @@
     "contract": "XBI251219C00127000",
     "ticker": "XBI",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 122.1,
     "strike_price": 127
   },
@@ -1035,7 +1035,7 @@
     "contract": "UPRO251212C00120500",
     "ticker": "UPRO",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 117.06,
     "strike_price": 120.5
   },
@@ -1043,7 +1043,7 @@
     "contract": "GDXJ251219C00117000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 108.51,
     "strike_price": 117
   },
@@ -1051,7 +1051,7 @@
     "contract": "XHB251219C00110000",
     "ticker": "XHB",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 104.98,
     "strike_price": 110
   },
@@ -1059,7 +1059,7 @@
     "contract": "GDXJ251212C00113000",
     "ticker": "GDXJ",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 108.51,
     "strike_price": 113
   },
@@ -1067,7 +1067,7 @@
     "contract": "XOP251219C00140000",
     "ticker": "XOP",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 134.44,
     "strike_price": 140
   },
@@ -1075,7 +1075,7 @@
     "contract": "XLK251212C00150000",
     "ticker": "XLK",
     "exchange": "ARCA",
-    "expiry_date": "12/12/2025",
+    "expiry_date": "2025-12-12",
     "current_price": 147.91,
     "strike_price": 150
   },
@@ -1083,7 +1083,7 @@
     "contract": "XLY251219C00305000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 305
   },
@@ -1091,7 +1091,7 @@
     "contract": "XLY251219C00310000",
     "ticker": "XLY",
     "exchange": "ARCA",
-    "expiry_date": "19/12/2025",
+    "expiry_date": "2025-12-19",
     "current_price": 118.355,
     "strike_price": 310
   }

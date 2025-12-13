@@ -4,7 +4,7 @@ from app.db.database import Base
 class SpreadOption(Base):
     __tablename__ = "BEST_SPREAD_OPTIONS"
 
-    id = Column(String, primary_key=True, index=True)
+    contract = Column(String, primary_key=True, index=True)
     ticker = Column(String, nullable=False, index=True)
     exchange = Column(Integer, ForeignKey("EXCHANGE.exchange_id"), nullable=False)
     expiry_date = Column(Date, nullable=False, index=True)

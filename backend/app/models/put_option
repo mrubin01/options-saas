@@ -4,7 +4,7 @@ from app.db.database import Base
 class PutOption(Base):
     __tablename__ = "BEST_PUT_OPTIONS"
 
-    id = Column(String, primary_key=True, index=True)
+    contract = Column(String, primary_key=True, index=True)
     ticker = Column(String, nullable=False, index=True)
     exchange = Column(Integer, ForeignKey("EXCHANGE.exchange_id"), nullable=False)
     expiry_date = Column(Date, nullable=False, index=True)

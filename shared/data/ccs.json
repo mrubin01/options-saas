@@ -3,7 +3,7 @@
     "contract": "KSS251114C00018000",
     "ticker": "KSS",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 17.54,
     "strike_price": 18,
     "premium": 77
@@ -12,7 +12,7 @@
     "contract": "NU251114C00016500",
     "ticker": "NU",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 16.17,
     "strike_price": 16.5,
     "premium": 58
@@ -21,7 +21,7 @@
     "contract": "NIO251114C00007500",
     "ticker": "NIO",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 7.29,
     "strike_price": 7.5,
     "premium": 21
@@ -30,7 +30,7 @@
     "contract": "GOOS251107C00014500",
     "ticker": "GOOS",
     "exchange": "NYSE",
-    "expiry_date": "07/11/2025",
+    "expiry_date": "2025-11-07",
     "current_price": 14.15,
     "strike_price": 14.5,
     "premium": 40
@@ -39,7 +39,7 @@
     "contract": "KSS251107C00018000",
     "ticker": "KSS",
     "exchange": "NYSE",
-    "expiry_date": "07/11/2025",
+    "expiry_date": "2025-11-07",
     "current_price": 17.54,
     "strike_price": 18,
     "premium": 40
@@ -48,7 +48,7 @@
     "contract": "NU251114C00017000",
     "ticker": "NU",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 16.17,
     "strike_price": 17,
     "premium": 37
@@ -57,7 +57,7 @@
     "contract": "KSS251114C00018500",
     "ticker": "KSS",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 17.54,
     "strike_price": 18.5,
     "premium": 39
@@ -66,7 +66,7 @@
     "contract": "KSS251114C00019000",
     "ticker": "KSS",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 17.54,
     "strike_price": 19,
     "premium": 40
@@ -75,7 +75,7 @@
     "contract": "AES251114C00014500",
     "ticker": "AES",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 14.22,
     "strike_price": 14.5,
     "premium": 30
@@ -84,7 +84,7 @@
     "contract": "VFC251114C00015000",
     "ticker": "VFC",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 14.78,
     "strike_price": 15,
     "premium": 30
@@ -93,7 +93,7 @@
     "contract": "GOOS251114C00015000",
     "ticker": "GOOS",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 14.15,
     "strike_price": 15,
     "premium": 20
@@ -102,7 +102,7 @@
     "contract": "NU251114C00017500",
     "ticker": "NU",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 16.17,
     "strike_price": 17.5,
     "premium": 23
@@ -111,7 +111,7 @@
     "contract": "KSS251114C00020000",
     "ticker": "KSS",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 17.54,
     "strike_price": 20,
     "premium": 21
@@ -120,7 +120,7 @@
     "contract": "TEVA251114C00025000",
     "ticker": "TEVA",
     "exchange": "NYSE",
-    "expiry_date": "14/11/2025",
+    "expiry_date": "2025-11-14",
     "current_price": 24.6,
     "strike_price": 25,
     "premium": 24
