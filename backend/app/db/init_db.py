@@ -1,5 +1,9 @@
 from app.db.database import Base, engine
 from app.models.covered_call import CoveredCall 
+from app.models.exchange import Exchange
+from app.models.trend import Trend
+from app.models.sector import Sector
+from app.models.industry import Industry
 # from app import models  # ensure all models are imported
 
 def init_db():
@@ -7,5 +11,5 @@ def init_db():
 
 if __name__ == "__main__":
     init_db()
-    print("Tables created successfully.")
+    print("Tables created successfully!!!")
 
