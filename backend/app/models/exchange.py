@@ -5,5 +5,5 @@ class Exchange(Base):
     __tablename__ = "EXCHANGE"
 
     exchange_id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False, unique=True)
+    exchange_name = Column(String, nullable=False, unique=True)
 
