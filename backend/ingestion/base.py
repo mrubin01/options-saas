@@ -28,8 +28,11 @@ def ingest_json(
         for key, value in defaults.items():
             r.setdefault(key, value)
 
-        objects.append(model(**r))
+        # objects.append(model(**r))
+        obj = model(**r)
+        session.merge(obj)
+        # Using merge to avoid duplicates based on primary key
 
-    session.bulk_save_objects(objects)
+    # session.bulk_save_objects(objects)
     session.commit()
 
