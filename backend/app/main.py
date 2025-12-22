@@ -4,8 +4,18 @@ from app import models
 from app.api.covered_calls import router as covered_calls_router
 from app.api.put_options import router as put_options_router
 from app.api.spread_options import router as spread_options_router
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Options SaaS API")
+
+# CORS (development)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # create tables automatically TEMPORARY
 Base.metadata.create_all(bind=engine)
