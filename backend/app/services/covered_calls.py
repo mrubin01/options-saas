@@ -1,6 +1,8 @@
 from sqlalchemy.orm import Session
 from app.models.covered_call import CoveredCall
 
+# API query layer  
+
 def get_covered_calls(
     db: Session,
     exchange: int | None = None,

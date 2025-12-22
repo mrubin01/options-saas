@@ -5,7 +5,7 @@ from app.api.covered_calls import router as covered_calls_router
 
 app = FastAPI(title="Options SaaS API")
 
-# create tables automatically
+# create tables automatically TEMPORARY
 Base.metadata.create_all(bind=engine)
 
 # routers

@@ -6,6 +6,8 @@ from app.db.database import get_db
 from app.schemas.covered_call import CoveredCallOut
 from app.services.covered_calls import get_covered_calls
 
+# this router handles filtering, pagination, and retrieval of covered call options
+
 router = APIRouter(prefix="/covered-calls", tags=["Covered Calls"])
 
 @router.get("/", response_model=List[CoveredCallOut])

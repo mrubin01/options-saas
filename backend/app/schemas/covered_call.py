@@ -1,6 +1,8 @@
 from datetime import date, datetime
 from pydantic import BaseModel
 
+# response schema: data to expose via API   
+
 class CoveredCallOut(BaseModel):
     contract: str
     ticker: str
