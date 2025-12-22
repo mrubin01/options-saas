@@ -7,6 +7,7 @@ def get_covered_calls(
     db: Session,
     exchange: int | None = None,
     ticker: str | None = None,
+    contract: str | None = None,
     min_expiry: str | None = None,
     limit: int = 50,
     offset: int = 0,
@@ -16,6 +17,9 @@ def get_covered_calls(
     if exchange is not None:
         query = query.filter(CoveredCall.exchange == exchange)
 
+    if contract is not None:
+        query = query.filter(CoveredCall.contract == contract)
+        
     if ticker is not None:
         query = query.filter(CoveredCall.ticker == ticker.upper())
 
