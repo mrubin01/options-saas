@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import { fetchCoveredCalls } from "../api/coveredCalls";
 import type { CoveredCall } from "../types/coveredCall";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 15;
+
+const EXCHANGES = [
+  { id: 0, name: "NYSE" },
+  { id: 1, name: "NASDAQ" },
+  { id: 2, name: "ARCA" },
+];
 
 export default function CoveredCallsPage() {
   const [data, setData] = useState<CoveredCall[]>([]);
@@ -68,14 +74,21 @@ export default function CoveredCallsPage() {
           }}
         />
 
-        <input
-          placeholder="Exchange (0 = NYSE)"
+        <select
           value={exchange}
           onChange={(e) => {
             setOffset(0);
             setExchange(e.target.value);
           }}
-        />
+        >
+          <option value="">All Exchanges</option>
+          {EXCHANGES.map((ex) => (
+            <option key={ex.id} value={ex.id}>
+              {ex.name}
+            </option>
+          ))}
+        </select>
+
       </div>
 
       {/* Table */}
@@ -86,8 +99,8 @@ export default function CoveredCallsPage() {
         <table border={1} cellPadding={6}>
           <thead>
             <tr>
-              <th>Contract</th>
               <th>Ticker</th>
+              <th>Contract</th>
               <th>Exchange</th>
               <th>Expiry</th>
               <th>Current</th>
@@ -97,8 +110,8 @@ export default function CoveredCallsPage() {
           <tbody>
             {data.map((cc) => (
               <tr key={cc.contract}>
-                <td>{cc.contract}</td>
                 <td>{cc.ticker}</td>
+                <td>{cc.contract}</td>
                 <td>{cc.exchange}</td>
                 <td>{cc.expiry_date}</td>
                 <td>{cc.current_price}</td>
