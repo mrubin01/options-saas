@@ -17,8 +17,8 @@ export default function OptionsTable({
     <table border={1} cellPadding={6} cellSpacing={0}>
       <thead>
         <tr>
-          <th>Contract</th>
           <th>Ticker</th>
+          <th>Contract</th>
           <th>Exchange</th>
           <th>Expiry</th>
           <th>Current</th>
@@ -28,8 +28,8 @@ export default function OptionsTable({
       <tbody>
         {data.map((row) => (
           <tr key={row.contract}>
-            <td>{row.contract}</td>
             <td>{row.ticker}</td>
+            <td>{row.contract}</td>
             <td>{exchangeMap[row.exchange] ?? row.exchange}</td>
             <td>{row.expiry_date}</td>
             <td>{row.current_price}</td>

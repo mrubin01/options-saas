@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchCoveredCalls } from "../api/coveredCalls";
 import type { CoveredCall } from "../types/coveredCall";
+import OptionsTable from "../components/OptionsTable";
 
 const PAGE_SIZE = 10;
 
@@ -102,30 +103,7 @@ export default function CoveredCallsPage() {
       {error && <p>{error}</p>}
 
       {!loading && !error && (
-        <table border={1} cellPadding={6}>
-          <thead>
-            <tr>
-              <th>Ticker</th>
-              <th>Contract</th>
-              <th>Exchange</th>
-              <th>Expiry</th>
-              <th>Current</th>
-              <th>Strike</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((cc) => (
-              <tr key={cc.contract}>
-                <td>{cc.ticker}</td>
-                <td>{cc.contract}</td>
-                <td>{EXCHANGE_MAP[cc.exchange] ?? cc.exchange}</td>
-                <td>{cc.expiry_date}</td>
-                <td>{cc.current_price}</td>
-                <td>{cc.strike_price}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <OptionsTable data={data} exchangeMap={EXCHANGE_MAP} />
       )}
 
       {/* Pagination */}
