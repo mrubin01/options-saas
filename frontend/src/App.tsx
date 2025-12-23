@@ -1,7 +1,7 @@
-import CoveredCallsPage from "./pages/CoveredCallsPage";
+import PutOptionsPage from "./pages/PutOptionsPage";
 
 function App() {
-  return <CoveredCallsPage />;
+  return <PutOptionsPage />;
 }
 
 export default App;
