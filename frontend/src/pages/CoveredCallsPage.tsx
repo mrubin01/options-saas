@@ -2,13 +2,19 @@ import { useEffect, useState } from "react";
 import { fetchCoveredCalls } from "../api/coveredCalls";
 import type { CoveredCall } from "../types/coveredCall";
 
-const PAGE_SIZE = 15;
+const PAGE_SIZE = 10;
 
 const EXCHANGES = [
   { id: 0, name: "NYSE" },
   { id: 1, name: "NASDAQ" },
   { id: 2, name: "ARCA" },
 ];
+
+const EXCHANGE_MAP: Record<number, string> = {
+  0: "NYSE",
+  1: "NASDAQ",
+  2: "ARCA",
+};
 
 export default function CoveredCallsPage() {
   const [data, setData] = useState<CoveredCall[]>([]);
@@ -112,7 +118,7 @@ export default function CoveredCallsPage() {
               <tr key={cc.contract}>
                 <td>{cc.ticker}</td>
                 <td>{cc.contract}</td>
-                <td>{cc.exchange}</td>
+                <td>{EXCHANGE_MAP[cc.exchange] ?? cc.exchange}</td>
                 <td>{cc.expiry_date}</td>
                 <td>{cc.current_price}</td>
                 <td>{cc.strike_price}</td>
