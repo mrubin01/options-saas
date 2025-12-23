@@ -11,6 +11,7 @@ export default function CoveredCallsPage() {
 
   // Filters
   const [ticker, setTicker] = useState("");
+  const [contract, setContract] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [exchange, setExchange] = useState("");
 
@@ -23,6 +24,7 @@ export default function CoveredCallsPage() {
 
     fetchCoveredCalls({
       ticker,
+      contract,
       expiry_date: expiryDate,
       exchange: exchange ? Number(exchange) : undefined,
       limit: PAGE_SIZE,
@@ -31,7 +33,7 @@ export default function CoveredCallsPage() {
       .then(setData)
       .catch(() => setError("Failed to load data"))
       .finally(() => setLoading(false));
-  }, [ticker, expiryDate, exchange, offset]);
+  }, [ticker, contract, expiryDate, exchange, offset]);
 
   return (
     <div>
@@ -45,6 +47,15 @@ export default function CoveredCallsPage() {
           onChange={(e) => {
             setOffset(0);
             setTicker(e.target.value.toUpperCase());
+          }}
+        />
+
+        <input
+          placeholder="Contract"
+          value={contract}
+          onChange={(e) => {
+            setOffset(0);
+            setContract(e.target.value.toUpperCase());
           }}
         />
 
