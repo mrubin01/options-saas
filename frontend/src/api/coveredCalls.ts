@@ -3,7 +3,9 @@ import type { CoveredCall } from "../types/coveredCall";
 
 export interface CoveredCallsQuery {
   ticker?: string;
+  expiry_date?: string;
   contract?: string;
+  exchange?: number;
   limit?: number;
   offset?: number;
 }
@@ -13,13 +15,14 @@ export function fetchCoveredCalls(
 ): Promise<CoveredCall[]> {
   const query = new URLSearchParams();
 
-  if (params.ticker) query.append("ticker", params.ticker);
-  if (params.contract) query.append("contract", params.contract);
-  if (params.limit !== undefined) query.append("limit", params.limit.toString());
-  if (params.offset !== undefined) query.append("offset", params.offset.toString());
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== "") {
+      query.append(key, String(value));
+    }
+  });
 
   const qs = query.toString();
-  const endpoint = qs ? `/covered-calls?${qs}` : "/covered-calls";
-
-  return apiGet<CoveredCall[]>(endpoint);
+  return apiGet<CoveredCall[]>(
+    qs ? `/covered-calls?${qs}` : "/covered-calls"
+  );
 }
