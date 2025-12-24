@@ -28,6 +28,17 @@ export default function Navigation() {
       >
         Put Options
       </NavLink>
+
+      <NavLink
+        to="/spread-options"
+        style={({ isActive }) => ({
+          ...linkStyle,
+          fontWeight: isActive ? "bold" : "normal",
+        })}
+      >
+        Spread Options
+      </NavLink>
+
     </nav>
   );
 }
