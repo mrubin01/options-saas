@@ -13,13 +13,22 @@ const exchangeMap: Record<number, string> = Object.fromEntries(
 export default function CoveredCallsPage() {
   const [filters, setFilters] = useState<Filters>({});
   const [data, setData] = useState<CoveredCall[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchCoveredCalls(filters).then(setData);
-  }, [filters]);
+  setLoading(true);
+  setError(null);
 
+  fetchCoveredCalls(filters)
+    .then(setData)
+    .catch(() => setError("Failed to load covered calls"))
+    .finally(() => setLoading(false));
+}, [filters]);
+
+  // RENDER: JSX returned to the browser
   return (
-    <>
+    <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <h2>Covered Calls</h2>
 
       <OptionsFilters
@@ -28,7 +37,17 @@ export default function CoveredCallsPage() {
         exchanges={EXCHANGES}
       />
 
-      <OptionsTable data={data} exchangeMap={exchangeMap} />
-    </>
+      {loading && <p>Loading...</p>}
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      {!loading && !error && data.length === 0 && (
+        <p>No results found</p>
+      )}
+
+      {!loading && !error && data.length > 0 && (
+        <OptionsTable data={data} exchangeMap={exchangeMap} />
+      )}
+    </div>
   );
 }
