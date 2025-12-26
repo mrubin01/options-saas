@@ -23,6 +23,16 @@ export default function OptionsFilters({
         style={{ marginRight: "0.5rem" }}
       />
 
+      {/* Contract */}
+      <input
+        placeholder="Contract"
+        value={filters.contract || ""}
+        onChange={(e) =>
+          onChange({ ...filters, contract: e.target.value || undefined })
+        }
+        style={{ marginRight: "0.5rem" }}
+      />
+
       {/* Exchange */}
       <select
         value={filters.exchange ?? ""}
