@@ -3,6 +3,8 @@ from sqlalchemy.orm import Session
 from typing import List
 
 from app.db.database import get_db
+from app.auth.deps import get_current_user
+from app.models.user import User
 from app.schemas.put_option import PutOptionOut
 from app.services.put_options import get_put_options
 
@@ -19,9 +21,10 @@ def list_put_options(
     limit: int = Query(50, le=200),
     offset: int = Query(0),
     db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
 ):
     """
-    Retrieve a list of cput options based on provided filters.
+    Retrieve a list of put options based on provided filters.
     - **exchange**: Filter by exchange ID.
     - **ticker**: Filter by stock ticker symbol.
     - **contract**: Filter by specific contract identifier.
