@@ -3,3 +3,4 @@ from app.models.exchange import Exchange
 from app.models.trend import Trend
 from app.models.sector import Sector
 from app.models.industry import Industry
+from app.models.user import User
