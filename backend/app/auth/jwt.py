@@ -1,9 +1,6 @@
 from datetime import datetime, timedelta
 from jose import jwt
-
-SECRET_KEY = "CHANGE_ME_LATER"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
+from app.core.security import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 
 def create_access_token(data: dict):
     to_encode = data.copy()
