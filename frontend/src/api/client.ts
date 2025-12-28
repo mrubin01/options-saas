@@ -5,6 +5,11 @@ function authHeaders(): Record<string, string> {
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
+function handleUnauthorized() {
+  localStorage.removeItem("access_token");
+  window.location.href = "/login";
+}
+
 export async function apiGet<T>(path: string): Promise<T> {
   const res = await fetch(`${API_URL}${path}`, {
     headers: {
@@ -13,9 +18,15 @@ export async function apiGet<T>(path: string): Promise<T> {
     },
   });
 
+  if (res.status === 401) {
+    handleUnauthorized();
+    throw new Error("Unauthorized");
+  }
+
   if (!res.ok) {
     throw new Error(await res.text());
   }
 
   return res.json();
 }
+
