@@ -1,44 +1,19 @@
-import { NavLink } from "react-router-dom";
-
-const linkStyle = {
-  marginRight: "1rem",
-  textDecoration: "none",
-};
+import { useAuth } from "../auth/AuthContext";
+import { Link } from "react-router-dom";
 
 
 export default function Navigation() {
+  const { token, logout } = useAuth();
+
+  if (!token) return null;
+
   return (
-    <nav style={{ marginBottom: "1.5rem" }}>
-      <NavLink
-        to="/covered-calls"
-        style={({ isActive }) => ({
-          ...linkStyle,
-          fontWeight: isActive ? "bold" : "normal",
-        })}
-      >
-        Covered Calls
-      </NavLink>
+    <nav>
+      <Link to="/covered-calls">Covered Calls</Link>
+      <Link to="/put-options">Put Options</Link>
+      <Link to="/spread-options">Spreads</Link>
 
-      <NavLink
-        to="/put-options"
-        style={({ isActive }) => ({
-          ...linkStyle,
-          fontWeight: isActive ? "bold" : "normal",
-        })}
-      >
-        Put Options
-      </NavLink>
-
-      <NavLink
-        to="/spread-options"
-        style={({ isActive }) => ({
-          ...linkStyle,
-          fontWeight: isActive ? "bold" : "normal",
-        })}
-      >
-        Spread Options
-      </NavLink>
-
+      <button onClick={logout}>Logout</button>
     </nav>
   );
 }
