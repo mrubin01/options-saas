@@ -6,7 +6,7 @@ from app.auth.security import hash_password, verify_password
 from app.auth.jwt import create_access_token
 from app.schemas.user import UserCreate
 
-router = APIRouter(prefix="/auth", tags=["auth"])
+router = APIRouter(tags=["auth"])
 
 @router.post("/register")
 def register(user_in: UserCreate, db: Session = Depends(get_db)):
