@@ -4,7 +4,8 @@ from app import models
 from app.api.covered_calls import router as covered_calls_router
 from app.api.put_options import router as put_options_router
 from app.api.spread_options import router as spread_options_router
-from app.api import auth
+# from app.api import auth
+from app.api.auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Options SaaS API")
@@ -25,7 +26,7 @@ Base.metadata.create_all(bind=engine)
 app.include_router(covered_calls_router)
 app.include_router(put_options_router)
 app.include_router(spread_options_router)
-app.include_router(auth.router)
+app.include_router(auth_router, prefix="/auth")
 
 @app.get("/")
 def root():
