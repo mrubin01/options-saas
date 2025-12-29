@@ -6,6 +6,7 @@ from app.auth.security import hash_password, verify_password
 from app.auth.jwt import create_access_token
 from app.schemas.user import UserCreate
 from fastapi.security import OAuth2PasswordRequestForm
+from app.auth.deps import get_current_user
 
 router = APIRouter(tags=["auth"])
 
@@ -44,3 +45,9 @@ def login(
         "token_type": "bearer",
     }
 
+@router.get("/me")
+def me(current_user: User = Depends(get_current_user)):
+    return {
+        "id": current_user.id,
+        "email": current_user.email,
+    }
