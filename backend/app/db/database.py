@@ -1,19 +1,19 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-DB_PATH = BASE_DIR / "test.db"
-
-DATABASE_URL = f"sqlite:///{DB_PATH}"
+DATABASE_URL = (
+    "postgresql+psycopg://options_user:strongpsw123@localhost:5432/options_saas"
+)
 
 engine = create_engine(
     DATABASE_URL,
-    connect_args={"check_same_thread": False},
+    echo=True,  # logs SQL (very useful during migration)
 )
 
 SessionLocal = sessionmaker(
-    autocommit=False, autoflush=False, bind=engine
+    autocommit=False,
+    autoflush=False,
+    bind=engine,
 )
 
 Base = declarative_base()
