@@ -4,3 +4,21 @@
 2025-12-29 13:39:34.880 GMT [23085] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2025-12-29 13:39:34.885 GMT [23086] LOG:  database system was shut down at 2025-12-29 13:38:23 GMT
 2025-12-29 13:39:34.890 GMT [23085] LOG:  database system is ready to accept connections
+2025-12-29 14:17:09.494 GMT [23719] ERROR:  insert or update on table "BEST_PUT_OPTIONS" violates foreign key constraint "BEST_PUT_OPTIONS_exchange_fkey"
+2025-12-29 14:17:09.494 GMT [23719] DETAIL:  Key (exchange)=(1) is not present in table "EXCHANGE".
+2025-12-29 14:17:09.494 GMT [23719] STATEMENT:  INSERT INTO "BEST_PUT_OPTIONS" (contract, ticker, exchange, expiry_date, current_price, strike_price) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::DATE, $5, $6)
+2025-12-29 14:17:19.365 GMT [23721] ERROR:  insert or update on table "BEST_SPREAD_OPTIONS" violates foreign key constraint "BEST_SPREAD_OPTIONS_exchange_fkey"
+2025-12-29 14:17:19.365 GMT [23721] DETAIL:  Key (exchange)=(2) is not present in table "EXCHANGE".
+2025-12-29 14:17:19.365 GMT [23721] STATEMENT:  INSERT INTO "BEST_SPREAD_OPTIONS" (contract, ticker, exchange, expiry_date, current_price, strike_price) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::DATE, $5, $6)
+2025-12-29 14:37:43.884 GMT [23829] ERROR:  relation "users" does not exist at character 15
+2025-12-29 14:37:43.884 GMT [23829] STATEMENT:  select * from USERS;
+2025-12-29 14:40:04.488 GMT [23829] ERROR:  relation "users" does not exist at character 15
+2025-12-29 14:40:04.488 GMT [23829] STATEMENT:  SELECT * FROM USERS;
+2025-12-29 17:14:47.853 GMT [25301] ERROR:  syntax error at or near ""BEST_COVERED_CALLS"" at character 10
+2025-12-29 17:14:47.853 GMT [25301] STATEMENT:  SELECT * "BEST_COVERED_CALLS";
+2025-12-29 17:15:45.885 GMT [25306] ERROR:  insert or update on table "BEST_PUT_OPTIONS" violates foreign key constraint "BEST_PUT_OPTIONS_exchange_fkey"
+2025-12-29 17:15:45.885 GMT [25306] DETAIL:  Key (exchange)=(1) is not present in table "EXCHANGE".
+2025-12-29 17:15:45.885 GMT [25306] STATEMENT:  INSERT INTO "BEST_PUT_OPTIONS" (contract, ticker, exchange, expiry_date, current_price, strike_price) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::DATE, $5, $6)
+2025-12-29 17:16:20.394 GMT [25310] ERROR:  insert or update on table "BEST_SPREAD_OPTIONS" violates foreign key constraint "BEST_SPREAD_OPTIONS_exchange_fkey"
+2025-12-29 17:16:20.394 GMT [25310] DETAIL:  Key (exchange)=(2) is not present in table "EXCHANGE".
+2025-12-29 17:16:20.394 GMT [25310] STATEMENT:  INSERT INTO "BEST_SPREAD_OPTIONS" (contract, ticker, exchange, expiry_date, current_price, strike_price) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::DATE, $5, $6)
