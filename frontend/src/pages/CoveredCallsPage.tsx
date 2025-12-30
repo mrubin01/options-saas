@@ -43,12 +43,20 @@ export default function CoveredCallsPage() {
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      {!loading && !error && data.length === 0 && (
-        <p>No results found</p>
+      {!loading && data.length === 0 && (
+        <div className="text-sm text-gray-500 py-6">
+          No results found.
+        </div>
       )}
 
       {!loading && !error && data.length > 0 && (
         <OptionsTable data={data} exchangeMap={exchangeMap} />
+      )}
+
+      {loading && (
+        <div className="text-sm text-gray-500 py-6">
+          Loading results…
+        </div>
       )}
     </div>
   );
