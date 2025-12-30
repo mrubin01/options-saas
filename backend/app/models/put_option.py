@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, Float, String, Date, ForeignKey, Index
+from sqlalchemy import Column, Integer, Float, String, Date, ForeignKey, Index, DateTime
 from app.db.database import Base
+from sqlalchemy.sql import func
 
 class PutOption(Base):
     __tablename__ = "BEST_PUT_OPTIONS"
@@ -10,6 +11,7 @@ class PutOption(Base):
     expiry_date = Column(Date, nullable=False, index=True)
     current_price = Column(Float, nullable=False)
     strike_price = Column(Float, nullable=False)
+    updated_at = Column(DateTime(timezone=True), server_default=func.now())
 
     __table_args__ = (
         Index("ix_put_options_ticker_expiry", "ticker", "expiry_date"),
