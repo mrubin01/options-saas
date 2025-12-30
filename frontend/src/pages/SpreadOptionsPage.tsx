@@ -20,7 +20,9 @@ export default function SpreadOptionsPage() {
 
   return (
     <>
-      <h2>Spread Options</h2>
+      <h2 className="text-xl font-semibold mb-4">
+        Best Spread Options
+      </h2>
 
       <OptionsFilters
         filters={filters}

@@ -29,7 +29,9 @@ export default function CoveredCallsPage() {
   // RENDER: JSX returned to the browser
   return (
     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <h2>Covered Calls</h2>
+      <h2 className="text-xl font-semibold mb-4">
+        Best Covered Calls
+      </h2>
 
       <OptionsFilters
         filters={filters}

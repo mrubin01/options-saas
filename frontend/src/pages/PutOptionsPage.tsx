@@ -20,7 +20,9 @@ export default function PutOptionsPage() {
 
   return (
     <>
-      <h2>Put Options</h2>
+      <h2 className="text-xl font-semibold mb-4">
+        Best Put Options
+      </h2>
 
       <OptionsFilters
         filters={filters}
