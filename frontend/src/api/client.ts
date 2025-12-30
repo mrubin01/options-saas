@@ -7,7 +7,7 @@ function authHeaders(): Record<string, string> {
 
 function handleUnauthorized() {
   localStorage.removeItem("access_token");
-  window.location.href = "/login";
+  window.location.href = "/login?expired=1";
 }
 
 export async function apiGet<T>(path: string): Promise<T> {
