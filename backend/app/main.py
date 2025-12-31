@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 # create tables automatically TEMPORARY
-Base.metadata.create_all(bind=engine)
+# Base.metadata.create_all(bind=engine) --> Alembic will handle migrations
 
 # routers
 app.include_router(covered_calls_router)
