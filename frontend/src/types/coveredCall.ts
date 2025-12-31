@@ -5,4 +5,5 @@ export interface CoveredCall {
   expiry_date: string;      // ISO string from backend
   current_price: number;
   strike_price: number;
+  updated_at: string;
 }
