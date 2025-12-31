@@ -22,3 +22,7 @@
 2025-12-29 17:16:20.394 GMT [25310] ERROR:  insert or update on table "BEST_SPREAD_OPTIONS" violates foreign key constraint "BEST_SPREAD_OPTIONS_exchange_fkey"
 2025-12-29 17:16:20.394 GMT [25310] DETAIL:  Key (exchange)=(2) is not present in table "EXCHANGE".
 2025-12-29 17:16:20.394 GMT [25310] STATEMENT:  INSERT INTO "BEST_SPREAD_OPTIONS" (contract, ticker, exchange, expiry_date, current_price, strike_price) VALUES ($1::VARCHAR, $2::VARCHAR, $3::INTEGER, $4::DATE, $5, $6)
+2025-12-29 21:46:00.181 GMT [23085] LOG:  received smart shutdown request
+2025-12-29 21:46:00.185 GMT [23085] LOG:  background worker "logical replication launcher" (PID 23092) exited with exit code 1
+2025-12-29 21:46:00.185 GMT [23087] LOG:  shutting down
+2025-12-29 21:46:00.204 GMT [23085] LOG:  database system is shut down
