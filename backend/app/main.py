@@ -9,10 +9,11 @@ from app.api.spread_options import router as spread_options_router
 # from app.api import auth
 from app.api.auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.logging import setup_logging, request_id_ctx
-from app.core.middleware import logging_middleware
-from app.core.request_id import RequestIdMiddleware
+from app.core.middleware.logging import setup_logging, request_id_ctx
+from app.core.middleware.request_id import RequestIdMiddleware
 from app.core.sentry import init_sentry
+from app.core.middleware.request_logging import logging_middleware
+from app.core.middleware.metrics import metrics_middleware
 
 setup_logging()
 
@@ -20,15 +21,10 @@ init_sentry()
 
 app = FastAPI(title="Options SaaS API")
 
+# ---- middleware ---- 
 app.add_middleware(RequestIdMiddleware)
-# app.middleware("http")(logging_middleware)
-
-@app.middleware("http")
-async def logging_middleware(request: Request, call_next):
-    request_id_ctx.set(getattr(request.state, "request_id", None))
-
-    response = await call_next(request)
-    return response
+app.middleware("http")(logging_middleware)
+app.middleware("http")(metrics_middleware)
 
 # CORS (development)
 app.add_middleware(
