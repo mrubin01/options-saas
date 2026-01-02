@@ -70,8 +70,12 @@ def ingest_json(
 
         logger.info(
             "Ingestion completed",
-            extra={"rows": len(records), "model": model.__tablename__},
+            extra={
+                "model": model.__tablename__,
+                "rows": len(records),
+            },
         )
+        
     except Exception:
         logger.exception("Ingestion failed")
 
