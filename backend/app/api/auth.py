@@ -7,7 +7,7 @@ from app.auth.jwt import create_access_token
 from app.schemas.user import UserCreate
 from fastapi.security import OAuth2PasswordRequestForm
 from app.auth.deps import get_current_user
-from app.core.logging import get_logger
+from app.core.middleware.logging import get_logger
 
 logger = get_logger("auth")
 
