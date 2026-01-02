@@ -2,6 +2,10 @@ import json
 from datetime import date, datetime
 from sqlalchemy.orm import Session
 from pathlib import Path
+from app.core.logging import get_logger
+
+logger = get_logger("ingestion")
+
 
 def parse_date(value: str) -> date | None:
     if value is None:
@@ -38,24 +42,37 @@ def ingest_json(
 ):
     defaults = defaults or {}
 
-    with json_path.open("r") as f:
-        records = json.load(f)
+    logger.info(
+        "Ingestion started",
+        extra={"model": model.__tablename__, "source": str(json_path)},
+    )
 
-    objects = []
+    try:
+        with json_path.open("r") as f:
+            records = json.load(f)
 
-    for r in records:
-        for field in date_fields:
-            if field in r and isinstance(r[field], str):
-                r[field] = parse_date(r[field])
+        objects = []
 
-        for key, value in defaults.items():
-            r.setdefault(key, value)
+        for r in records:
+            for field in date_fields:
+                if field in r and isinstance(r[field], str):
+                    r[field] = parse_date(r[field])
 
-        # objects.append(model(**r))
-        obj = model(**r)
-        session.merge(obj)
-        # Using merge to avoid duplicates based on primary key
+            for key, value in defaults.items():
+                r.setdefault(key, value)
 
-    # session.bulk_save_objects(objects)
-    session.commit()
+            # objects.append(model(**r))
+            obj = model(**r)
+            session.merge(obj)
+            # Using merge to avoid duplicates based on primary key
+
+        session.commit()
+
+        logger.info(
+            "Ingestion completed",
+            extra={"rows": len(records), "model": model.__tablename__},
+        )
+    except Exception:
+        logger.exception("Ingestion failed")
+
 
