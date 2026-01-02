@@ -9,6 +9,9 @@ from app.api.spread_options import router as spread_options_router
 # from app.api import auth
 from app.api.auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
+from app.core.logging import setup_logging
+
+setup_logging()
 
 app = FastAPI(title="Options SaaS API")
 
