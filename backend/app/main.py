@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from app.db.database import Base, engine
 from app import models
 from app.api.covered_calls import router as covered_calls_router
@@ -9,13 +9,23 @@ from app.api.spread_options import router as spread_options_router
 # from app.api import auth
 from app.api.auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.logging import setup_logging
+from app.core.logging import setup_logging, request_id_ctx
 from app.core.middleware import logging_middleware
+from app.core.request_id import RequestIdMiddleware
 
 setup_logging()
 
 app = FastAPI(title="Options SaaS API")
-app.middleware("http")(logging_middleware)
+
+app.add_middleware(RequestIdMiddleware)
+# app.middleware("http")(logging_middleware)
+
+@app.middleware("http")
+async def logging_middleware(request: Request, call_next):
+    request_id_ctx.set(getattr(request.state, "request_id", None))
+
+    response = await call_next(request)
+    return response
 
 # CORS (development)
 app.add_middleware(
