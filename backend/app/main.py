@@ -10,10 +10,12 @@ from app.api.spread_options import router as spread_options_router
 from app.api.auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.logging import setup_logging
+from app.core.middleware import logging_middleware
 
 setup_logging()
 
 app = FastAPI(title="Options SaaS API")
+app.middleware("http")(logging_middleware)
 
 # CORS (development)
 app.add_middleware(
