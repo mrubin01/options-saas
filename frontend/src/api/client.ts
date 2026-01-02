@@ -10,10 +10,17 @@ function handleUnauthorized() {
   window.location.href = "/login?expired=1";
 }
 
+function generateRequestId() {
+  return crypto.randomUUID();
+}
+
 export async function apiGet<T>(path: string): Promise<T> {
+  const requestId = generateRequestId();
+
   const res = await fetch(`${API_URL}${path}`, {
     headers: {
       "Content-Type": "application/json",
+      "X-Request-ID": requestId,
       ...authHeaders(),
     },
   });
