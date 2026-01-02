@@ -13,7 +13,7 @@ from app.core.middleware.logging import setup_logging, request_id_ctx
 from app.core.middleware.request_id import RequestIdMiddleware
 from app.core.sentry import init_sentry
 from app.core.middleware.request_logging import logging_middleware
-from app.core.middleware.metrics import metrics_middleware
+from app.core.middleware.metrics import metrics_middleware, metrics_endpoint
 
 setup_logging()
 
@@ -54,3 +54,7 @@ app.include_router(auth_router, prefix="/auth")
 def root():
     return {"status": "backend is running"}
 
+# metrics endpoint
+@app.get("/metrics")
+def metrics():
+    return metrics_endpoint()
