@@ -43,10 +43,10 @@ def login(
     logger.info("Attempting login for user", extra={"email": form_data.username})
 
     if not user or not verify_password(form_data.password, user.password_hash):
-        logger.warning("Login failed for user", extra={"email": form_data.username})
+        logger.warning("Login failed", extra={"email": form_data.username})
         raise HTTPException(status_code=401, detail="Invalid credentials")
     else:
-        logger.info("Login successful for user", extra={"email": form_data.username})   
+        logger.info("Login success", extra={"user_id": user.id})  
 
     token = create_access_token({"sub": str(user.id)})
 
