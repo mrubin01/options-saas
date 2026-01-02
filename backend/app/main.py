@@ -12,8 +12,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.logging import setup_logging, request_id_ctx
 from app.core.middleware import logging_middleware
 from app.core.request_id import RequestIdMiddleware
+from app.core.sentry import init_sentry
 
 setup_logging()
+
+init_sentry()
 
 app = FastAPI(title="Options SaaS API")
 
