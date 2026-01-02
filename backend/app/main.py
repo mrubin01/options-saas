@@ -21,6 +21,12 @@ init_sentry()
 
 app = FastAPI(title="Options SaaS API")
 
+@app.on_event("startup")
+def startup_checks():
+    import app.api.auth
+    import app.core.middleware.logging
+    import app.core.middleware.metrics
+
 # ---- middleware ---- 
 app.add_middleware(RequestIdMiddleware)
 app.middleware("http")(logging_middleware)
