@@ -7,8 +7,12 @@ class CoveredCall(Base):
 
     contract = Column(String, primary_key=True, index=True)
     ticker = Column(String, nullable=False, index=True)
-    exchange = Column(Integer, nullable=False, default=0)
-    # exchange = Column(Integer, ForeignKey("EXCHANGE.exchange_id"), nullable=False)
+    exchange = Column(
+    Integer,
+    ForeignKey("EXCHANGE.exchange_id", ondelete="RESTRICT"),
+    nullable=False,
+    )
+    # exchange = Column(Integer, nullable=False, default=0)
     expiry_date = Column(Date, nullable=False, index=True)
     current_price = Column(Float, nullable=False)
     strike_price = Column(Float, nullable=False)
