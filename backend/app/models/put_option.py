@@ -9,7 +9,11 @@ class PutOption(Base):
     ticker = Column(String, nullable=False, index=True)
     exchange = Column(
     Integer,
-    ForeignKey("EXCHANGE.exchange_id", ondelete="RESTRICT"),
+    ForeignKey(
+        "EXCHANGE.exchange_id",
+        name="fk_put_options_exchange",
+        ondelete="RESTRICT",
+    ),
     nullable=False,
     )
     # exchange = Column(Integer, ForeignKey("EXCHANGE.exchange_id"), nullable=False)

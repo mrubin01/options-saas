@@ -9,7 +9,11 @@ class CoveredCall(Base):
     ticker = Column(String, nullable=False, index=True)
     exchange = Column(
     Integer,
-    ForeignKey("EXCHANGE.exchange_id", ondelete="RESTRICT"),
+    ForeignKey(
+        "EXCHANGE.exchange_id",
+        name="fk_covered_calls_exchange",
+        ondelete="RESTRICT",
+    ),
     nullable=False,
     )
     # exchange = Column(Integer, nullable=False, default=0)
