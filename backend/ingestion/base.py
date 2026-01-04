@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime, timezone
 from typing import Type
 
 from sqlalchemy.orm import Session
@@ -91,6 +91,7 @@ def ingest_json_file(
     json_path: Path,
     required_fields: list[str],
     conflict_columns: list[str],
+    set_updated_at: bool = False,
 ):
     """
     Generic JSON → PostgreSQL ingestion
@@ -103,10 +104,14 @@ def ingest_json_file(
     with json_path.open() as f:
         raw_records = json.load(f)
 
+
     records = []
     for raw in raw_records:
         validate_record(raw, required_fields)
         normalized = normalize_record(raw)
+        if set_updated_at and hasattr(model, "updated_at"):
+            normalized["updated_at"] = datetime.now(timezone.utc)
+        
         records.append(normalized)
 
     upsert_records(
@@ -115,6 +120,5 @@ def ingest_json_file(
         records=records,
         conflict_columns=conflict_columns,
     )
-
 
 

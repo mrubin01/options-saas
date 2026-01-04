@@ -1,26 +1,34 @@
+from pathlib import Path
 from sqlalchemy.orm import Session
-from app.db.database import SessionLocal
+
+from ingestion.base import ingest_json_file
 from app.models.put_option import PutOption
-from ingestion.base import ingest_json
-from ingestion.utils import SHARED_DATA_DIR
+from app.core.middleware.logging import get_logger
 
-def run():
-    json_path = SHARED_DATA_DIR / "puts.json"
+logger = get_logger(__name__)
 
-    if not json_path.exists():
-        raise FileNotFoundError(f"File not found: {json_path}")
+DATA_FILE = Path("data/puts.json")
 
-    db: Session = SessionLocal()
-    try:
-        ingest_json(
-            session=db,
-            model=PutOption,
-            json_path=json_path,
-            defaults={"exchange": 0},
-        )
-        print(f"Ingested put options from {json_path}")
-    finally:
-        db.close()
+REQUIRED_FIELDS = [
+    "contract",
+    "ticker",
+    "exchange",
+    "expiry_date",
+    "current_price",
+    "strike_price",
+]
 
-if __name__ == "__main__":
-    run()
+CONFLICT_COLUMNS = ["contract"]
+
+
+def ingest_put_options(db: Session):
+    logger.info("Ingesting put options")
+
+    ingest_json_file(
+        db=db,
+        model=PutOption,
+        json_path=DATA_FILE,
+        required_fields=REQUIRED_FIELDS,
+        conflict_columns=CONFLICT_COLUMNS,
+        set_updated_at=True,
+    )
