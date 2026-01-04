@@ -1,82 +1,120 @@
 import json
-from datetime import date, datetime
-from sqlalchemy.orm import Session
 from pathlib import Path
-from app.core.logging import get_logger
+from datetime import date
+from typing import Type
 
-logger = get_logger("ingestion")
+from sqlalchemy.orm import Session
+from sqlalchemy.dialects.postgresql import insert
+
+from app.core.middleware.logging import get_logger
+
+logger = get_logger(__name__)
 
 
-def parse_date(value: str) -> date | None:
-    if value is None:
-        return None
+# ---------- helpers ----------
 
+def parse_date(value):
     if isinstance(value, date):
         return value
-
-    if isinstance(value, datetime):
-        return value.date()
-
     if isinstance(value, str):
-        # Try ISO first (YYYY-MM-DD)
-        try:
-            return date.fromisoformat(value)
-        except ValueError:
-            pass
-
-        # Try DD/MM/YYYY
-        try:
-            return datetime.strptime(value, "%d/%m/%Y").date()
-        except ValueError:
-            pass
-
-    raise ValueError(f"Unsupported date format: {value!r}")
+        return date.fromisoformat(value)
+    raise ValueError(f"Invalid date value: {value}")
 
 
-def ingest_json(
-    session: Session,
-    model,
-    json_path: Path,
-    date_fields: set[str] = {"expiry_date"},
-    defaults: dict | None = None,
+def normalize_record(record: dict) -> dict:
+    """
+    Normalize raw JSON record into DB-ready format.
+    """
+    r = record.copy()
+
+    if "expiry_date" in r:
+        r["expiry_date"] = parse_date(r["expiry_date"])
+
+    if "ticker" in r and r["ticker"]:
+        r["ticker"] = r["ticker"].upper()
+
+    return r
+
+
+def validate_record(record: dict, required_fields: list[str]):
+    for field in required_fields:
+        if field not in record:
+            raise ValueError(f"Missing required field: {field}")
+        if record[field] is None:
+            raise ValueError(f"Null value for field: {field}")
+
+
+# ---------- core ingestion ----------
+
+def upsert_records(
+    db: Session,
+    model: Type,
+    records: list[dict],
+    conflict_columns: list[str],
 ):
-    defaults = defaults or {}
+    """
+    PostgreSQL UPSERT (ON CONFLICT DO UPDATE)
+    """
+    if not records:
+        logger.info("No records to ingest", extra={"table": model.__tablename__})
+        return
 
-    logger.info(
-        "Ingestion started",
-        extra={"model": model.__tablename__, "source": str(json_path)},
+    stmt = insert(model).values(records)
+
+    update_columns = {
+        col.name: stmt.excluded[col.name]
+        for col in model.__table__.columns
+        if col.name not in conflict_columns
+    }
+
+    stmt = stmt.on_conflict_do_update(
+        index_elements=conflict_columns,
+        set_=update_columns,
     )
 
-    try:
-        with json_path.open("r") as f:
-            records = json.load(f)
+    db.execute(stmt)
+    db.commit()
 
-        objects = []
+    logger.info(
+        "Upsert completed",
+        extra={
+            "table": model.__tablename__,
+            "rows": len(records),
+        },
+    )
 
-        for r in records:
-            for field in date_fields:
-                if field in r and isinstance(r[field], str):
-                    r[field] = parse_date(r[field])
 
-            for key, value in defaults.items():
-                r.setdefault(key, value)
+def ingest_json_file(
+    *,
+    db: Session,
+    model: Type,
+    json_path: Path,
+    required_fields: list[str],
+    conflict_columns: list[str],
+):
+    """
+    Generic JSON → PostgreSQL ingestion
+    """
+    logger.info(
+        "Starting ingestion",
+        extra={"table": model.__tablename__, "file": str(json_path)},
+    )
 
-            # objects.append(model(**r))
-            obj = model(**r)
-            session.merge(obj)
-            # Using merge to avoid duplicates based on primary key
+    with json_path.open() as f:
+        raw_records = json.load(f)
 
-        session.commit()
+    records = []
+    for raw in raw_records:
+        validate_record(raw, required_fields)
+        normalized = normalize_record(raw)
+        records.append(normalized)
 
-        logger.info(
-            "Ingestion completed",
-            extra={
-                "model": model.__tablename__,
-                "rows": len(records),
-            },
-        )
-        
-    except Exception:
-        logger.exception("Ingestion failed")
+    upsert_records(
+        db=db,
+        model=model,
+        records=records,
+        conflict_columns=conflict_columns,
+    )
+
 
 
