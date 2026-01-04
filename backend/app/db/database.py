@@ -7,10 +7,10 @@ load_dotenv()
 
 logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-
+# uvicorn and fastapi use read-only user  
+DATABASE_URL = os.getenv("DATABASE_URL_APP")
 if not DATABASE_URL:
-    raise RuntimeError("DATABASE_URL is not set")
+    raise RuntimeError("DATABASE_URL_APP is not set")
 
 engine = create_engine(
     DATABASE_URL,
