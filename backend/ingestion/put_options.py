@@ -1,5 +1,6 @@
 from pathlib import Path
 from sqlalchemy.orm import Session
+from app.core.paths import DATA_DIR
 
 from ingestion.base import ingest_json_file
 from app.models.put_option import PutOption
@@ -9,7 +10,8 @@ logger = get_logger(__name__)
 
 print("put_options module loaded!")
 
-DATA_FILE = Path("data/puts.json")
+# DATA_FILE = Path("data/puts.json")
+JSON_PATH = DATA_DIR / "puts.json"
 
 REQUIRED_FIELDS = [
     "contract",
@@ -31,7 +33,7 @@ def ingest_put_options(db: Session):
     ingest_json_file(
         db=db,
         model=PutOption,
-        json_path=DATA_FILE,
+        json_path=JSON_PATH,
         required_fields=REQUIRED_FIELDS,
         conflict_columns=CONFLICT_COLUMNS,
         set_updated_at=True,

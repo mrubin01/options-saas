@@ -1,5 +1,6 @@
 from pathlib import Path
 from sqlalchemy.orm import Session
+from app.core.paths import DATA_DIR
 
 from ingestion.base import ingest_json_file
 from app.models.covered_call import CoveredCall
@@ -9,7 +10,9 @@ logger = get_logger(__name__)
 
 print("covered_calls module loaded!")
 
-DATA_FILE = Path("data/covered_calls.json")
+# DATA_FILE = Path("options-saas/shared/data/ccs.json")
+
+JSON_PATH = DATA_DIR / "ccs.json"
 
 REQUIRED_FIELDS = [
     "contract",
@@ -31,7 +34,7 @@ def ingest_covered_calls(db: Session):
     ingest_json_file(
         db=db,
         model=CoveredCall,
-        json_path=DATA_FILE,
+        json_path=JSON_PATH,
         required_fields=REQUIRED_FIELDS,
         conflict_columns=CONFLICT_COLUMNS,
         set_updated_at=True,

@@ -101,9 +101,11 @@ def ingest_json_file(
         extra={"table": model.__tablename__, "file": str(json_path)},
     )
 
+    if not json_path.exists():
+        raise FileNotFoundError(f"JSON file not found: {json_path}")
+
     with json_path.open() as f:
         raw_records = json.load(f)
-
 
     records = []
     for raw in raw_records:

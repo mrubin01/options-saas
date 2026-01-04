@@ -1,6 +1,7 @@
 
 from pathlib import Path
 from sqlalchemy.orm import Session
+from app.core.paths import DATA_DIR
 
 from ingestion.base import ingest_json_file
 from app.models.spread_option import SpreadOption
@@ -10,7 +11,8 @@ logger = get_logger(__name__)
 
 print("spread_options module loaded!")
 
-DATA_FILE = Path("data/spreads.json")
+# DATA_FILE = Path("data/spreads.json")
+JSON_PATH = DATA_DIR / "spreads.json"
 
 REQUIRED_FIELDS = [
     "contract",
@@ -31,7 +33,7 @@ def ingest_spread_options(db: Session):
     ingest_json_file(
         db=db,
         model=SpreadOption,
-        json_path=DATA_FILE,
+        json_path=JSON_PATH,
         required_fields=REQUIRED_FIELDS,
         conflict_columns=CONFLICT_COLUMNS,
         set_updated_at=True,
