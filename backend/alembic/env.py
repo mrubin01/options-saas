@@ -14,11 +14,11 @@ load_dotenv()
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-database_url = os.getenv("DATABASE_URL")
-if not database_url:
-    raise RuntimeError("DATABASE_URL is not set")
+DATABASE_URL = os.getenv("DATABASE_URL_ADMIN")
+if not DATABASE_URL:
+    raise RuntimeError("DATABASE_URL_ADMIN is not set")
 
-config.set_main_option("sqlalchemy.url", database_url)
+config.set_main_option("sqlalchemy.url", DATABASE_URL)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
