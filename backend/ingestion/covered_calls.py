@@ -7,6 +7,8 @@ from app.core.middleware.logging import get_logger
 
 logger = get_logger(__name__)
 
+print("covered_calls module loaded!")
+
 DATA_FILE = Path("data/covered_calls.json")
 
 REQUIRED_FIELDS = [
@@ -22,6 +24,8 @@ CONFLICT_COLUMNS = ["contract"]
 
 
 def ingest_covered_calls(db: Session):
+    print("ingest_covered_calls function loaded!")
+
     logger.info("Ingesting covered calls")
 
     ingest_json_file(
@@ -32,3 +36,12 @@ def ingest_covered_calls(db: Session):
         conflict_columns=CONFLICT_COLUMNS,
         set_updated_at=True,
     )
+
+if __name__ == "__main__":
+    from app.db.database import SessionLocal
+
+    db = SessionLocal()
+    try:
+        ingest_covered_calls(db)
+    finally:
+        db.close()

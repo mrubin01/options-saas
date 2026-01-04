@@ -8,6 +8,8 @@ from app.core.middleware.logging import get_logger
 
 logger = get_logger(__name__)
 
+print("spread_options module loaded!")
+
 DATA_FILE = Path("data/spreads.json")
 
 REQUIRED_FIELDS = [
@@ -23,6 +25,7 @@ CONFLICT_COLUMNS = ["contract"]
 
 
 def ingest_spread_options(db: Session):
+    print("ingest_spread_options function loaded!")
     logger.info("Ingesting spread options")
 
     ingest_json_file(
@@ -33,3 +36,12 @@ def ingest_spread_options(db: Session):
         conflict_columns=CONFLICT_COLUMNS,
         set_updated_at=True,
     )
+
+if __name__ == "__main__":
+    from app.db.database import SessionLocal
+
+    db = SessionLocal()
+    try:
+        ingest_spread_options(db)
+    finally:
+        db.close()
