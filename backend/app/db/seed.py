@@ -1,9 +1,22 @@
 from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+import os
 from app.db.database import SessionLocal
 from app.models.exchange import Exchange
 from app.models.trend import Trend
 from app.models.sector import Sector
 from app.models.industry import Industry
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DATABASE_URL_ADMIN = os.getenv("DATABASE_URL_ADMIN")
+if not DATABASE_URL_ADMIN:
+    raise RuntimeError("DATABASE_URL_ADMIN is not set")
+
+engine = create_engine(DATABASE_URL_ADMIN)
+SessionLocal = sessionmaker(bind=engine)
 
 def seed_exchanges(db: Session):
     exchanges = [
