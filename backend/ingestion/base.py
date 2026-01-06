@@ -13,12 +13,33 @@ logger = get_logger(__name__)
 
 # ---------- helpers ----------
 
-def parse_date(value):
-    if isinstance(value, date):
-        return value
-    if isinstance(value, str):
+from datetime import date, datetime
+
+def parse_date(value: str) -> date:
+    """
+    Parse a date string into a date object.
+    Supports:
+    - YYYY-MM-DD (ISO)
+    - DD/MM/YYYY (European)
+    """
+    if not value:
+        raise ValueError("Empty date value")
+
+    value = value.strip()
+
+    # ISO format: 2025-11-14
+    try:
         return date.fromisoformat(value)
-    raise ValueError(f"Invalid date value: {value}")
+    except ValueError:
+        pass
+
+    # European format: 14/11/2025
+    try:
+        return datetime.strptime(value, "%d/%m/%Y").date()
+    except ValueError:
+        pass
+
+    raise ValueError(f"Unsupported date format: {value}")
 
 
 def normalize_record(record: dict) -> dict:
