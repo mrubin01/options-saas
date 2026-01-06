@@ -3,6 +3,8 @@ import sys
 from pythonjsonlogger.json import JsonFormatter
 from contextvars import ContextVar
 
+logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
+
 request_id_ctx: ContextVar[str | None] = ContextVar("request_id", default=None)
 
 class RequestIdFilter(logging.Filter):
@@ -16,6 +18,9 @@ def setup_logging(level=logging.INFO):
     formatter = JsonFormatter(
         "%(asctime)s %(levelname)s %(name)s %(message)s %(request_id)s"
     )
+
+    # from database.py
+    logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
 
     handler.setFormatter(formatter)
     handler.addFilter(RequestIdFilter())
