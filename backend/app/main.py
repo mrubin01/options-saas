@@ -14,6 +14,8 @@ from app.core.middleware.request_id import RequestIdMiddleware
 from app.core.sentry import init_sentry
 from app.core.middleware.request_logging import logging_middleware
 from app.core.middleware.metrics import metrics_middleware, metrics_endpoint
+from app.api.health import router as health_router
+import os
 
 setup_logging()
 
@@ -33,12 +35,18 @@ app.middleware("http")(logging_middleware)
 app.middleware("http")(metrics_middleware)
 
 # CORS (development)
+cors_origins = os.getenv("CORS_ORIGINS", "")
+ALLOWED_ORIGINS = [o.strip() for o in cors_origins.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=[
+        "Authorization",
+        "Content-Type",
+    ],
 )
 
 # create tables automatically TEMPORARY
@@ -49,6 +57,7 @@ app.include_router(covered_calls_router)
 app.include_router(put_options_router)
 app.include_router(spread_options_router)
 app.include_router(auth_router, prefix="/auth")
+app.include_router(health_router)
 
 @app.get("/")
 def root():
