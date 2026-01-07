@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.db.database import get_db
 from app.models.user import User
@@ -57,6 +57,12 @@ def login(
 
 @router.get("/me")
 def me(current_user: User = Depends(get_current_user)):
+    if current_user is None:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Not authenticated",
+        )
+
     return {
         "id": current_user.id,
         "email": current_user.email,
