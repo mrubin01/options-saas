@@ -43,10 +43,7 @@ app.add_middleware(
     allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=[
-        "Authorization",
-        "Content-Type",
-    ],
+    allow_headers=["*"],
 )
 
 # create tables automatically TEMPORARY
