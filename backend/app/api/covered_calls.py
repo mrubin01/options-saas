@@ -5,14 +5,14 @@ from typing import List
 from app.db.database import get_db
 from app.auth.deps import get_current_user
 from app.models.user import User
-from app.schemas.covered_call import CoveredCallOut
+from app.schemas.covered_call import CoveredCallOut, CoveredCallsList
 from app.services.covered_calls import get_covered_calls
 
 # this router handles filtering, pagination, and retrieval of covered call options
 
 router = APIRouter(prefix="/covered-calls", tags=["Covered Calls"])
 
-@router.get("/", response_model=List[CoveredCallOut])
+@router.get("/", response_model=CoveredCallsList)
 def list_covered_calls(
     exchange: int | None = Query(None),
     ticker: str | None = Query(None),
@@ -24,13 +24,7 @@ def list_covered_calls(
     current_user: User = Depends(get_current_user),
 ):
     """
-    Retrieve a list of covered call options based on provided filters.
-    - **exchange**: Filter by exchange ID.
-    - **ticker**: Filter by stock ticker symbol.
-    - **contract**: Filter by specific contract identifier.
-    - **min_expiry**: Filter by minimum expiry date (YYYY-MM-DD).
-    - **limit**: Maximum number of results to return (default 50, max 200).
-    - **offset**: Number of results to skip for pagination (default 0).
+    Retrieve a list of covered call options with filters.
     """
     covered_calls = get_covered_calls(
         db=db,
@@ -42,4 +36,8 @@ def list_covered_calls(
         offset=offset,
     )
 
-    return covered_calls
+    return CoveredCallsList(
+        success=True,
+        data=[CoveredCallOut.from_orm(cc) for cc in covered_calls],
+        error=None
+    )
