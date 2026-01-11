@@ -68,15 +68,11 @@ def login(
     )
 
 
-@router.get("/me")
+@router.get("/me", response_model=ApiResponse[UserOut])
 def me(current_user: User = Depends(get_current_user)):
-    if current_user is None:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Not authenticated",
-        )
+    return ApiResponse(
+        success=True,
+        data=UserOut.from_orm(current_user),
+        error=None
+    )
 
-    return {
-        "id": current_user.id,
-        "email": current_user.email,
-    }
