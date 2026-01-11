@@ -5,14 +5,15 @@ from typing import List
 from app.db.database import get_db
 from app.auth.deps import get_current_user
 from app.models.user import User
-from app.schemas.put_option import PutOptionOut
+from app.schemas.put_option import PutOptionOut, PutOptionList
 from app.services.put_options import get_put_options
 
 # this router handles filtering, pagination, and retrieval of put options
 
+
 router = APIRouter(prefix="/put-options", tags=["Put Options"])
 
-@router.get("/", response_model=List[PutOptionOut])
+@router.get("/", response_model=PutOptionList)
 def list_put_options(
     exchange: int | None = Query(None),
     ticker: str | None = Query(None),
@@ -24,13 +25,7 @@ def list_put_options(
     current_user: User = Depends(get_current_user),
 ):
     """
-    Retrieve a list of put options based on provided filters.
-    - **exchange**: Filter by exchange ID.
-    - **ticker**: Filter by stock ticker symbol.
-    - **contract**: Filter by specific contract identifier.
-    - **min_expiry**: Filter by minimum expiry date (YYYY-MM-DD).
-    - **limit**: Maximum number of results to return (default 50, max 200).
-    - **offset**: Number of results to skip for pagination (default 0).
+    Retrieve a list of put options with filters.
     """
     put_options = get_put_options(
         db=db,
@@ -42,4 +37,10 @@ def list_put_options(
         offset=offset,
     )
 
-    return put_options
+    return PutOptionList(
+        success=True,
+        data=[PutOptionOut.from_orm(po) for po in put_options],
+        error=None
+    )
+
+
