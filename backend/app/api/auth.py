@@ -8,6 +8,8 @@ from app.schemas.user import UserCreate
 from fastapi.security import OAuth2PasswordRequestForm
 from app.auth.deps import get_current_user
 from app.core.middleware.logging import get_logger
+from app.schemas.response import ApiResponse, ErrorModel
+from app.schemas.user import UserOut, LoginResponseData
 
 logger = get_logger("auth")
 
@@ -33,7 +35,7 @@ def register(user_in: UserCreate, db: Session = Depends(get_db)):
 
     return {"id": user.id, "email": user.email}
 
-@router.post("/login")
+@router.post("/login", response_model=ApiResponse[LoginResponseData])
 def login(
     form_data: OAuth2PasswordRequestForm = Depends(),
     db: Session = Depends(get_db),
@@ -44,16 +46,27 @@ def login(
 
     if not user or not verify_password(form_data.password, user.password_hash):
         logger.warning("Login failed", extra={"email": form_data.username})
-        raise HTTPException(status_code=401, detail="Invalid credentials")
-    else:
-        logger.info("Login success", extra={"user_id": user.id})  
+        return ApiResponse(
+            success=False,
+            data=None,
+            error=ErrorModel(
+                code="INVALID_CREDENTIALS",
+                message="Invalid email or password",
+            ),
+        )
 
     token = create_access_token({"sub": str(user.id)})
 
-    return {
-        "access_token": token,
-        "token_type": "bearer",
-    }
+    return ApiResponse(
+        success=True,
+        data=LoginResponseData(
+            access_token=token,
+            token_type="bearer",
+            user=UserOut.from_orm(user),
+        ),
+        error=None,
+    )
+
 
 @router.get("/me")
 def me(current_user: User = Depends(get_current_user)):
