@@ -10,3 +10,15 @@ class UserRead(BaseModel):
 
     class Config:
         orm_mode = True
+
+class UserOut(BaseModel):
+    id: int
+    email: str
+
+    class Config:
+        orm_mode = True
+
+class LoginResponseData(BaseModel):
+    access_token: str
+    token_type: str
+    user: UserOut
