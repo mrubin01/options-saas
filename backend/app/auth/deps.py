@@ -1,6 +1,6 @@
 from fastapi import Depends, HTTPException, status, Request
-from fastapi.security import HTTPBearer
-from jose import jwt, JWTError
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from jose import jwt, JWTError, ExpiredSignatureError
 from sqlalchemy.orm import Session
 from app.db.database import get_db
 from app.models.user import User
@@ -12,34 +12,50 @@ from app.core.security import SECRET_KEY, ALGORITHM
 #     auto_error=False
 # )
 
-bearer_scheme = HTTPBearer()
+bearer_scheme = HTTPBearer(auto_error=False)
 
 async def get_current_user(
     request: Request,
-    credentials = Depends(bearer_scheme),
+    token: HTTPAuthorizationCredentials = Depends(bearer_scheme),
     db: Session = Depends(get_db),
 ) -> Optional[User]:
 
-    token = credentials.credentials
+    # Allow browser preflight
+    if request.method == "OPTIONS":
+        return None
 
-    if not token:
+    if token is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Not authenticated",
+            headers={"WWW-Authenticate": "Bearer"},
         )
 
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        payload = jwt.decode(
+            token.credentials,
+            SECRET_KEY,
+            algorithms=[ALGORITHM],
+        )
         user_id = payload.get("sub")
         if user_id is None:
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Invalid token",
             )
+
+    except ExpiredSignatureError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Token expired",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
     except JWTError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid token",
+            headers={"WWW-Authenticate": "Bearer"},
         )
 
     user = db.get(User, int(user_id))
@@ -50,4 +66,5 @@ async def get_current_user(
         )
 
     return user
+
 
