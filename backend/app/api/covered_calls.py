@@ -7,12 +7,13 @@ from app.auth.deps import get_current_user
 from app.models.user import User
 from app.schemas.covered_call import CoveredCallOut, CoveredCallsList
 from app.services.covered_calls import get_covered_calls
+from app.schemas.api import ApiResponse
 
 # this router handles filtering, pagination, and retrieval of covered call options
 
 router = APIRouter(prefix="/covered-calls", tags=["Covered Calls"])
 
-@router.get("/", response_model=CoveredCallsList)
+@router.get("/", response_model=ApiResponse[List[CoveredCallOut]])
 def list_covered_calls(
     exchange: int | None = Query(None),
     ticker: str | None = Query(None),
@@ -36,8 +37,8 @@ def list_covered_calls(
         offset=offset,
     )
 
-    return CoveredCallsList(
+    return ApiResponse(
         success=True,
         data=[CoveredCallOut.from_orm(cc) for cc in covered_calls],
-        error=None
+        error=None,
     )
