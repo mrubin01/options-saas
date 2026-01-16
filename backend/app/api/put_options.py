@@ -7,13 +7,13 @@ from app.auth.deps import get_current_user
 from app.models.user import User
 from app.schemas.put_option import PutOptionOut, PutOptionList
 from app.services.put_options import get_put_options
+from app.schemas.api import ApiResponse
 
 # this router handles filtering, pagination, and retrieval of put options
 
-
 router = APIRouter(prefix="/put-options", tags=["Put Options"])
 
-@router.get("/", response_model=PutOptionList)
+@router.get("/", response_model=ApiResponse[List[PutOptionOut]])
 def list_put_options(
     exchange: int | None = Query(None),
     ticker: str | None = Query(None),
@@ -37,10 +37,9 @@ def list_put_options(
         offset=offset,
     )
 
-    return PutOptionList(
+    return ApiResponse(
         success=True,
         data=[PutOptionOut.from_orm(po) for po in put_options],
-        error=None
+        error=None,
     )
-
 

@@ -7,12 +7,13 @@ from app.auth.deps import get_current_user
 from app.models.user import User
 from app.schemas.spread_option import SpreadOptionOut, SpreadOptionList
 from app.services.spread_options import get_spread_options
+from app.schemas.api import ApiResponse
 
 # this router handles filtering, pagination, and retrieval of spread options
 
 router = APIRouter(prefix="/spread-options", tags=["Spread Options"])
 
-@router.get("/", response_model=SpreadOptionList)
+@router.get("/", response_model=ApiResponse[List[SpreadOptionOut]])
 def list_spread_options(
     exchange: int | None = Query(None),
     ticker: str | None = Query(None),
@@ -36,9 +37,9 @@ def list_spread_options(
         offset=offset,
     )
 
-    return SpreadOptionList(
+    return ApiResponse(
         success=True,
         data=[SpreadOptionOut.from_orm(so) for so in spread_options],
-        error=None
+        error=None,
     )
 

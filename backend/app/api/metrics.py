@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 from fastapi.responses import PlainTextResponse
 from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
+from app.schemas.api import ApiResponse
 
 router = APIRouter(tags=["metrics"])
-
 
 @router.get("/metrics", response_class=PlainTextResponse)
 def metrics():

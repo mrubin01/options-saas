@@ -10,6 +10,8 @@ from app.auth.deps import get_current_user
 from app.core.middleware.logging import get_logger
 from app.schemas.response import ApiResponse, ErrorModel
 from app.schemas.user import UserOut, LoginResponseData
+from app.schemas.api import ApiResponse, ApiError
+from typing import List
 
 logger = get_logger("auth")
 
@@ -49,7 +51,7 @@ def login(
         return ApiResponse(
             success=False,
             data=None,
-            error=ErrorModel(
+            error=ApiError(
                 code="INVALID_CREDENTIALS",
                 message="Invalid email or password",
             ),
@@ -67,8 +69,7 @@ def login(
         error=None,
     )
 
-
-@router.get("/me", response_model=ApiResponse[UserOut])
+@router.get("/me", response_model=ApiResponse[List[UserOut]])
 def me(current_user: User = Depends(get_current_user)):
     return ApiResponse(
         success=True,
