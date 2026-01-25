@@ -39,6 +39,10 @@ def list_covered_calls(
 
     return ApiResponse(
         success=True,
-        data=[CoveredCallOut.from_orm(cc) for cc in covered_calls],
+        data=CoveredCallsList(
+            items=[CoveredCallOut.from_orm(cc) for cc in covered_calls],
+            limit=limit,
+            offset=offset,
+        ),
         error=None,
     )

@@ -18,6 +18,6 @@ class CoveredCallOut(CoveredCallBase):
         orm_mode = True
 
 class CoveredCallsList(BaseModel):
-    success: bool
-    data: List[CoveredCallOut]
-    error: str | None = None
+    items: List[CoveredCallOut]
+    limit: int
+    offset: int

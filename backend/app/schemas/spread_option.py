@@ -18,6 +18,6 @@ class SpreadOptionOut(SpreadOptionBase):
         orm_mode = True
 
 class SpreadOptionList(BaseModel):
-    success: bool
-    data: List[SpreadOptionOut]
-    error: str | None = None
+    items: List[SpreadOptionOut]
+    limit: int
+    offset: int

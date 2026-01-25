@@ -39,7 +39,11 @@ def list_put_options(
 
     return ApiResponse(
         success=True,
-        data=[PutOptionOut.from_orm(po) for po in put_options],
+        data=PutOptionList(
+            items=[PutOptionOut.from_orm(po) for po in put_options],
+            limit=limit,
+            offset=offset,
+        ),
         error=None,
     )
 

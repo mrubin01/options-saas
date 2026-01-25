@@ -39,7 +39,11 @@ def list_spread_options(
 
     return ApiResponse(
         success=True,
-        data=[SpreadOptionOut.from_orm(so) for so in spread_options],
+        data=SpreadOptionList(
+            items=[SpreadOptionOut.from_orm(so) for so in spread_options],
+            limit=limit,
+            offset=offset,
+        ),
         error=None,
     )
 

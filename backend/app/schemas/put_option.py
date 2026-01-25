@@ -18,6 +18,6 @@ class PutOptionOut(PutOptionBase):
         orm_mode = True
 
 class PutOptionList(BaseModel):
-    success: bool
-    data: List[PutOptionOut]
-    error: str | None = None
+    items: List[PutOptionOut]
+    limit: int
+    offset: int
