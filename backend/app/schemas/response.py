@@ -3,11 +3,11 @@ from pydantic import BaseModel
 
 T = TypeVar("T")
 
-class ApiModel(BaseModel):
+class ApiError(BaseModel):
     code: str
     message: str
 
 class ApiResponse(BaseModel, Generic[T]):
     success: bool
     data: Optional[T]
-    error: Optional[ApiModel]
+    error: Optional[ApiError]

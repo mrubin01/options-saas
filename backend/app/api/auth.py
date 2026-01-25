@@ -8,7 +8,7 @@ from app.schemas.user import UserCreate
 from fastapi.security import OAuth2PasswordRequestForm
 from app.auth.deps import get_current_user
 from app.core.middleware.logging import get_logger
-from app.schemas.response import ApiResponse, ApiModel
+from app.schemas.response import ApiResponse, ApiError
 from app.schemas.user import UserOut, LoginResponseData
 from app.schemas.api import ApiResponse, ApiError
 from typing import List
