@@ -8,7 +8,7 @@ from app.schemas.user import UserCreate
 from fastapi.security import OAuth2PasswordRequestForm
 from app.auth.deps import get_current_user
 from app.core.middleware.logging import get_logger
-from app.schemas.response import ApiResponse, ErrorModel
+from app.schemas.response import ApiResponse, ApiModel
 from app.schemas.user import UserOut, LoginResponseData
 from app.schemas.api import ApiResponse, ApiError
 from typing import List
@@ -48,13 +48,12 @@ def login(
 
     if not user or not verify_password(form_data.password, user.password_hash):
         logger.warning("Login failed", extra={"email": form_data.username})
-        return ApiResponse(
-            success=False,
-            data=None,
-            error=ApiError(
-                code="INVALID_CREDENTIALS",
-                message="Invalid email or password",
-            ),
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail={
+                "code": "INVALID_CREDENTIALS",
+                "message": "Invalid email or password",
+            },
         )
 
     token = create_access_token({"sub": str(user.id)})
