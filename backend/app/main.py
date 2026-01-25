@@ -1,6 +1,12 @@
 from dotenv import load_dotenv
 load_dotenv()
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.exceptions import RequestValidationError
+from app.core.exceptions import (
+    http_exception_handler,
+    validation_exception_handler,
+    unhandled_exception_handler,
+)
 from app.db.database import Base, engine
 from app import models
 from app.api.covered_calls import router as covered_calls_router
@@ -28,6 +34,11 @@ def startup_checks():
     import app.api.auth
     import app.core.middleware.logging
     import app.core.middleware.metrics
+
+# ---- Global exception handlers ----
+app.add_exception_handler(HTTPException, http_exception_handler)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
+app.add_exception_handler(Exception, unhandled_exception_handler)
 
 # ---- middleware ---- 
 app.add_middleware(RequestIdMiddleware)

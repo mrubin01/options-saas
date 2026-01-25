@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from starlette.status import HTTP_500_INTERNAL_SERVER_ERROR
 
-from app.schemas.response import ApiResponse, ApiError
+from app.schemas.api import ApiResponse, ApiError
 
 
 def http_exception_handler(request: Request, exc: HTTPException):
