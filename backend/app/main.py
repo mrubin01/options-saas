@@ -9,11 +9,6 @@ from app.core.exceptions import (
 )
 from app.db.database import Base, engine
 from app import models
-# from app.api.covered_calls import router as covered_calls_router
-# from app.api.put_options import router as put_options_router
-# from app.api.spread_options import router as spread_options_router
-# from app.api import auth
-# from app.api.auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.middleware.logging import setup_logging, request_id_ctx
 from app.core.middleware.request_id import RequestIdMiddleware
@@ -29,6 +24,7 @@ setup_logging()
 init_sentry()
 
 app = FastAPI(title="Options SaaS API")
+app.include_router(v1_router, prefix="/v1")
 
 @app.on_event("startup")
 def startup_checks():
