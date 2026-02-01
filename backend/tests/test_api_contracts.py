@@ -52,10 +52,12 @@ def auth_token():
     assert res.status_code == 200
 
     payload = res.json()
-    assert "access_token" in payload
 
-    return payload["access_token"]
+    assert payload["success"] is True
+    assert payload["data"] is not None
+    assert "access_token" in payload["data"]
 
+    return payload["data"]["access_token"]
 
 @pytest.fixture
 def auth_headers(auth_token):
