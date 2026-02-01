@@ -11,7 +11,7 @@ from app.schemas.api import ApiResponse
 
 # this router handles filtering, pagination, and retrieval of put options
 
-router = APIRouter(tags=["Put Options"])
+router = APIRouter()
 
 @router.get("/", response_model=ApiResponse[List[PutOptionOut]])
 def list_put_options(

@@ -53,15 +53,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# create tables automatically TEMPORARY
-# Base.metadata.create_all(bind=engine) --> Alembic will handle migrations
-
 # routers
-# app.include_router(covered_calls_router)
-# app.include_router(put_options_router)
-# app.include_router(spread_options_router)
-# app.include_router(auth_router, prefix="/auth")
-# app.include_router(health_router)
 app.include_router(v1_router, prefix="/v1")
 
 @app.get("/")
@@ -69,6 +61,6 @@ def root():
     return {"status": "backend is running"}
 
 # metrics endpoint
-@app.get("/metrics")
-def metrics():
-    return metrics_endpoint()
+# @app.get("/metrics")
+# def metrics():
+#     return metrics_endpoint()
