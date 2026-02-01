@@ -9,18 +9,19 @@ from app.core.exceptions import (
 )
 from app.db.database import Base, engine
 from app import models
-from app.api.covered_calls import router as covered_calls_router
-from app.api.put_options import router as put_options_router
-from app.api.spread_options import router as spread_options_router
+# from app.api.covered_calls import router as covered_calls_router
+# from app.api.put_options import router as put_options_router
+# from app.api.spread_options import router as spread_options_router
 # from app.api import auth
-from app.api.auth import router as auth_router
+# from app.api.auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.middleware.logging import setup_logging, request_id_ctx
 from app.core.middleware.request_id import RequestIdMiddleware
 from app.core.sentry import init_sentry
 from app.core.middleware.request_logging import logging_middleware
 from app.core.middleware.metrics import metrics_middleware, metrics_endpoint
-from app.api.health import router as health_router
+# from app.api.health import router as health_router
+from app.api.v1.router import router as v1_router
 import os
 
 setup_logging()
@@ -31,7 +32,7 @@ app = FastAPI(title="Options SaaS API")
 
 @app.on_event("startup")
 def startup_checks():
-    import app.api.auth
+    import app.api.v1.auth
     import app.core.middleware.logging
     import app.core.middleware.metrics
 
@@ -61,11 +62,12 @@ app.add_middleware(
 # Base.metadata.create_all(bind=engine) --> Alembic will handle migrations
 
 # routers
-app.include_router(covered_calls_router)
-app.include_router(put_options_router)
-app.include_router(spread_options_router)
-app.include_router(auth_router, prefix="/auth")
-app.include_router(health_router)
+# app.include_router(covered_calls_router)
+# app.include_router(put_options_router)
+# app.include_router(spread_options_router)
+# app.include_router(auth_router, prefix="/auth")
+# app.include_router(health_router)
+app.include_router(v1_router)
 
 @app.get("/")
 def root():
