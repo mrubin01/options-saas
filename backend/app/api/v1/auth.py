@@ -14,7 +14,7 @@ from typing import List
 
 logger = get_logger("auth")
 
-router = APIRouter(tags=["auth"])
+router = APIRouter()
 
 @router.post("/register")
 def register(user_in: UserCreate, db: Session = Depends(get_db)):
