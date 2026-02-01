@@ -41,7 +41,7 @@ def auth_token():
     """
 
     res = client.post(
-        "/auth/login",
+        "/v1/auth/login",
         data={
             "username": TEST_EMAIL,
             "password": TEST_PASSWORD,
@@ -69,7 +69,7 @@ def auth_headers(auth_token):
 # ---- CONTRACT TESTS ----
 
 def test_auth_me_contract(auth_headers):
-    res = client.get("/auth/me", headers=auth_headers)
+    res = client.get("/v1/auth/me", headers=auth_headers)
     assert res.status_code == 200
 
     data = res.json()
@@ -82,7 +82,7 @@ def test_auth_me_contract(auth_headers):
 
 
 def test_covered_calls_contract(auth_headers):
-    res = client.get("/covered-calls", headers=auth_headers)
+    res = client.get("/v1/covered-calls", headers=auth_headers)
     assert res.status_code == 200
 
     data = res.json()
@@ -105,7 +105,7 @@ def test_covered_calls_contract(auth_headers):
 
 
 def test_put_options_contract(auth_headers):
-    res = client.get("/put-options", headers=auth_headers)
+    res = client.get("/v1/put-options", headers=auth_headers)
     assert res.status_code == 200
 
     data = res.json()
@@ -119,7 +119,7 @@ def test_put_options_contract(auth_headers):
 
 
 def test_spread_options_contract(auth_headers):
-    res = client.get("/spread-options", headers=auth_headers)
+    res = client.get("/v1/spread-options", headers=auth_headers)
     assert res.status_code == 200
 
     data = res.json()
@@ -136,7 +136,7 @@ def test_unauthorized_contract():
     """
     Verify unauthorized responses are ALSO wrapped correctly
     """
-    res = client.get("/covered-calls")
+    res = client.get("/v1/covered-calls")
     assert res.status_code == 401
 
     data = res.json()
