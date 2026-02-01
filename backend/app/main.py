@@ -24,7 +24,6 @@ setup_logging()
 init_sentry()
 
 app = FastAPI(title="Options SaaS API")
-app.include_router(v1_router, prefix="/v1")
 
 @app.on_event("startup")
 def startup_checks():
@@ -63,7 +62,7 @@ app.add_middleware(
 # app.include_router(spread_options_router)
 # app.include_router(auth_router, prefix="/auth")
 # app.include_router(health_router)
-app.include_router(v1_router)
+app.include_router(v1_router, prefix="/v1")
 
 @app.get("/")
 def root():
