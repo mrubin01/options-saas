@@ -11,7 +11,7 @@ from app.schemas.api import ApiResponse
 
 # this router handles filtering, pagination, and retrieval of spread options
 
-router = APIRouter(prefix="/spread-options", tags=["Spread Options"])
+router = APIRouter(tags=["Spread Options"])
 
 @router.get("/", response_model=ApiResponse[List[SpreadOptionOut]])
 def list_spread_options(

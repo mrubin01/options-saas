@@ -11,7 +11,7 @@ from app.schemas.api import ApiResponse
 
 # this router handles filtering, pagination, and retrieval of covered call options
 
-router = APIRouter(prefix="/covered-calls", tags=["Covered Calls"])
+router = APIRouter(tags=["Covered Calls"])
 
 @router.get("/", response_model=ApiResponse[List[CoveredCallOut]])
 def list_covered_calls(
