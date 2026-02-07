@@ -147,3 +147,6 @@ grafana_data/
 local/
 dev/
 development/
+.DS_Store
+**/.DS_Store
+shared/data/*.json
